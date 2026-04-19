@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Teaching — Wayne Fu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-name"><a href="index.html">Wayne Fu</a></div>
+    <ul class="nav-links">
+      <li><a href="index.html">About</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="work.html">Work & Publications</a></li>
+      <li><a href="teaching.html" class="active">Teaching</a></li>
+      <li class="nav-dropdown">
+        <span class="nav-dropdown-label">Journal ▾</span>
+        <ul class="dropdown-menu">
+          <li><a href="journal.html">Journal: [Topic 1]</a></li>
+          <li><a href="journal2.html">Journal: [Topic 2]</a></li>
+        </ul>
+      </li>
+    </ul>
+    <button class="nav-toggle" onclick="toggleNav()">☰</button>
+  </nav>
+
+  <main class="page-inner">
+
+    <div class="page-header">
+      <span class="page-label">Teaching</span>
+      <h1>Teaching <em>Activities</em></h1>
+      <p class="page-subtitle">Courses, supervision, and student mentorship</p>
+    </div>
+
+    <!-- TEACHING PHOTO -->
+    <div class="teaching-photo-wrap">
+      <img src="Teaching.jpg" alt="Wayne Fu teaching at University of Michigan-Dearborn" class="teaching-photo">
+      <p class="teaching-photo-caption">Decision Analysis · University of Michigan-Dearborn</p>
+    </div>
+
+    <!-- PHILOSOPHY -->
+    <section class="research-intro" style="margin-top:2.5rem;">
+      <p class="lead">I enjoy teaching quantitative courses that require both rigorous thinking and practical judgment. My goal is always to connect methods to meaning — every analytical technique students learn should tie back to a real decision someone has to make. I teach across statistics, decision analysis, business analytics, and operations management at both undergraduate and graduate levels.</p>
+    </section>
+
+    <!-- TEACHING INTERESTS -->
+    <section class="work-section">
+      <h2 class="section-heading">Teaching Interests</h2>
+      <div class="teaching-interests">
+        <div class="interest-pill">Statistics &amp; Management Science</div>
+        <div class="interest-pill">Business Analytics</div>
+        <div class="interest-pill">Operations &amp; Supply Chain Management</div>
+        <div class="interest-pill">Decision Analysis</div>
+        <div class="interest-pill">Data Mining for Business</div>
+        <div class="interest-pill">Operations Planning &amp; Control</div>
+      </div>
+    </section>
+
+    <!-- COURSES -->
+    <section class="work-section">
+      <h2 class="section-heading">Current &amp; Recent Courses</h2>
+
+      <div class="course-card">
+        <div class="course-meta">
+          <span class="course-code">BusOBA 4232</span>
+          <span class="course-inst">Ohio State University · Fall 2025</span>
+        </div>
+        <h3>Operations Planning &amp; Control</h3>
+        <p>Covers core concepts in production planning, inventory management, scheduling, and supply chain coordination. Enrollment: 19 students.</p>
+      </div>
+
+      <div class="course-card">
+        <div class="course-meta">
+          <span class="course-code">DS 301</span>
+          <span class="course-inst">UM-Dearborn · Recurring</span>
+        </div>
+        <h3>Introduction to Business Statistics</h3>
+        <p>Foundational course in statistical reasoning for business. Topics include descriptive statistics, probability, hypothesis testing, and regression analysis. Taught multiple sections each term with enrollments ranging from 10 to 72 students.</p>
+      </div>
+
+      <div class="course-card">
+        <div class="course-meta">
+          <span class="course-code">DS 631</span>
+          <span class="course-inst">UM-Dearborn · Recurring</span>
+        </div>
+        <h3>Decision Analysis</h3>
+        <p>Graduate course on analytic techniques for rational decision-making under uncertainty. Topics include decision modeling, influence diagrams, decision trees, sensitivity analysis, simulation, risk attitudes, objective hierarchies, and the value of information. Students complete applied projects demonstrating skills in real business contexts.</p>
+        <div class="project-links" style="margin-top:0.75rem;">
+          <a href="https://sites.google.com/umich.edu/ds631projects/about" target="_blank">View Student Project Collection →</a>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <div class="course-meta">
+          <span class="course-code">DS 633</span>
+          <span class="course-inst">UM-Dearborn · Fall 2024</span>
+        </div>
+        <h3>Data Mining for Business Applications</h3>
+        <p>Graduate course on applied machine learning and data mining techniques for business decision-making, including classification, clustering, and predictive modeling. Enrollment: 10 students.</p>
+      </div>
+
+      <div class="course-card">
+        <div class="course-meta">
+          <span class="course-code">MGT 2251</span>
+          <span class="course-inst">Georgia Institute of Technology · 2015</span>
+        </div>
+        <h3>Introduction to Management Science</h3>
+        <p>Undergraduate course in quantitative methods for management, including linear programming, network models, and simulation. Taught two sections of ~42–46 students each.</p>
+      </div>
+    </section>
+
+    <!-- SUPERVISION -->
+    <section class="work-section">
+      <h2 class="section-heading">Student Supervision</h2>
+
+      <div class="talks-group">
+        <h3 class="talks-subhead">Dissertation &amp; Thesis Committees</h3>
+        <div class="talk-list">
+          <div class="talk-entry">
+            <span class="talk-date">DBA/PhD</span>
+            <div class="talk-info">
+              <p class="talk-title">Marlene Gonzalez</p>
+              <p class="talk-venue">Pepperdine University</p>
+            </div>
+          </div>
+          <div class="talk-entry">
+            <span class="talk-date">Master's</span>
+            <div class="talk-info">
+              <p class="talk-title">Ching-Kuan Tsai</p>
+              <p class="talk-venue">National Taiwan University</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="talks-group" style="margin-top:2rem;">
+        <h3 class="talks-subhead">Undergraduate Research (Summer Research Experience Program)</h3>
+        <div class="talk-list">
+          <div class="talk-entry"><span class="talk-date">2023</span><div class="talk-info"><p class="talk-title">Catalina Bibang</p></div></div>
+          <div class="talk-entry"><span class="talk-date">2022</span><div class="talk-info"><p class="talk-title">Phuong Dinh</p></div></div>
+          <div class="talk-entry"><span class="talk-date">2021</span><div class="talk-info"><p class="talk-title">Siddarth Patel</p></div></div>
+          <div class="talk-entry"><span class="talk-date">2019</span><div class="talk-info"><p class="talk-title">Jay Hopson</p></div></div>
+          <div class="talk-entry"><span class="talk-date">2018</span><div class="talk-info"><p class="talk-title">Adrian Maloy</p></div></div>
+        </div>
+      </div>
+
+      <div class="talks-group" style="margin-top:2rem;">
+        <h3 class="talks-subhead">External Advisory</h3>
+        <div class="talk-list">
+          <div class="talk-entry">
+            <span class="talk-date">2011–12</span>
+            <div class="talk-info">
+              <p class="talk-title">External Industry Advisor for graduate students</p>
+              <p class="talk-venue">School of Operations Research and Information Engineering · Cornell University</p>
+            </div>
+          </div>
+          <div class="talk-entry">
+            <span class="talk-date">2019–present</span>
+            <div class="talk-info">
+              <p class="talk-title">Advisor — Scheller College of Business MBA Team</p>
+              <p class="talk-venue">Bowersox Graduate Supply Chain Challenge · Georgia Institute of Technology</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICE -->
+    <section class="work-section">
+      <h2 class="section-heading">Editorial &amp; Professional Service</h2>
+      <div class="service-grid">
+
+        <div class="service-block">
+          <h3>Editorial Roles</h3>
+          <ul class="service-list">
+            <li>Editorial Review Board — <em>Journal of Operations Management</em> (2025–present)</li>
+            <li>Editorial Review Board — <em>Production and Operations Management</em> (2025–present)</li>
+            <li>Editorial Review Board — <em>IJOPM</em> (2022–present)</li>
+            <li>Associate Editor — <em>International Journal of Production Engineering</em> (2019–present)</li>
+            <li>Online Editor — College of Sustainable Operations, POMS (2022–2024)</li>
+          </ul>
+        </div>
+
+        <div class="service-block">
+          <h3>Peer Reviewing</h3>
+          <ul class="service-list">
+            <li>Management Science</li>
+            <li>Manufacturing &amp; Service Operations Management</li>
+            <li>International Journal of Operations and Production Management</li>
+            <li>Production and Operations Management</li>
+            <li>Production Planning &amp; Control</li>
+            <li>Midwest Academy of Management (conference)</li>
+            <li>EurOMA (conference)</li>
+          </ul>
+        </div>
+
+        <div class="service-block">
+          <h3>University Service</h3>
+          <ul class="service-list">
+            <li>COB Representative, Summer Undergraduate Research Experience (2018–present)</li>
+            <li>Scholarship &amp; Award Committee, COB (2021–present; Chair 2023)</li>
+            <li>Secretary of Governing Faculty (2020)</li>
+            <li>Faculty Search Committees: HR, IT, Strategy, Marketing, Accounting, Finance</li>
+          </ul>
+        </div>
+
+        <div class="service-block">
+          <h3>Competition Judging</h3>
+          <ul class="service-list">
+            <li>Student Paper Competition — College of Sustainable Operations, POMS (2020, 2023)</li>
+            <li>Student Paper Competition — Decision Science Institute (2025)</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Wayne Fu · University of Michigan-Dearborn · <a href="mailto:waynefu@umich.edu">waynefu@umich.edu</a></p>
+  </footer>
+
+  <script src="nav.js"></script>
+</body>
+</html>
