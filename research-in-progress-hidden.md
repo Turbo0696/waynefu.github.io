@@ -1,6 +1,30 @@
-# Research in Progress (Hidden from Work & Publications)
+# Hidden Sections (Work & Publications)
 
-These entries were removed from the live page on 2026-04-22. Restore by uncommenting the section in `work.html`.
+Removed from the live page on 2026-04-22. Restore by uncommenting the relevant sections in `work.html`.
+
+---
+
+## Manuscripts Under Review
+
+### Striving for Mediocrity: Evaluating Buyer and Competitor Pressure on Supplier Responses to Relative Environmental Performance
+**D. Cole, H.C. Su, Wayne Fu, T. Schoenherr**
+Under 2nd round review — *Journal of Business Logistics*
+
+### Setting the Bar for Green: An Empirical Analysis of Emission Target Efficacy
+**K. Hsu, Wayne Fu, H.C. Su**
+Under review — *International Journal of Operations and Production Management*
+
+### The Influence of Voluntary Environmental Disclosure on the Environmental Impact of Waste Reduction Activities
+**D. Cole, Wayne Fu, H.C. Su**
+Under review — *Decision Science*
+
+### Strategic Buyer-Supplier Relationship Dissolution: Application through the Lens of the Actor-Partner Interdependence Model
+**Y.S. Chen, S. Shen, Wayne Fu**
+Under review — *Journal of Business Logistics*
+
+---
+
+## Research in Progress
 
 ---
 
