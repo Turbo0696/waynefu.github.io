@@ -42,14 +42,14 @@
 
     <div class="journal-filters">
       <span class="filter-label">Filter:</span>
-      <button class="tag-btn active" onclick="filterEntries('all', event)">All</button>
-      <button class="tag-btn" onclick="filterEntries('litigation', event)">Litigation</button>
-      <button class="tag-btn" onclick="filterEntries('policy', event)">Policy</button>
-      <button class="tag-btn" onclick="filterEntries('industry', event)">Industry</button>
-      <button class="tag-btn" onclick="filterEntries('research', event)">Research</button>
-      <button class="tag-btn" onclick="filterEntries('aftermarket', event)">Aftermarket</button>
-      <button class="tag-btn" onclick="filterEntries('reverse-logistics', event)">Reverse Logistics</button>
-      <button class="tag-btn" onclick="filterEntries('circular-economy', event)">Circular Economy</button>
+      <button class="tag-btn active" id="tagAll" onclick="filterEntries('all', 'All', event)">All</button>
+      <button class="tag-btn" onclick="filterEntries('litigation', 'Litigation', event)">Litigation</button>
+      <button class="tag-btn" onclick="filterEntries('policy', 'Policy', event)">Policy</button>
+      <button class="tag-btn" onclick="filterEntries('industry', 'Industry', event)">Industry</button>
+      <button class="tag-btn" onclick="filterEntries('research', 'Research', event)">Research</button>
+      <button class="tag-btn" onclick="filterEntries('aftermarket', 'Aftermarket', event)">Aftermarket</button>
+      <button class="tag-btn" onclick="filterEntries('reverse-logistics', 'Reverse Logistics', event)">Reverse Logistics</button>
+      <button class="tag-btn" onclick="filterEntries('circular-economy', 'Circular Economy', event)">Circular Economy</button>
     </div>
 
     <section class="journal-entries">
@@ -108,6 +108,11 @@
 
     </section>
 
+    <div class="journal-empty" id="journalEmpty" style="display:none;">
+      <p>No entries tagged <em id="journalEmptyLabel"></em> so far.</p>
+      <button class="journal-empty-clear" onclick="filterEntries('all', 'All', event)">Clear filter — view all entries →</button>
+    </div>
+
   </main>
 
   <footer class="footer">
@@ -116,13 +121,27 @@
 
   <script src="nav.js"></script>
   <script>
-    function filterEntries(tag, event) {
+    function filterEntries(tag, label, event) {
       const entries = document.querySelectorAll('.journal-entry');
       document.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('active'));
-      if (event && event.target) event.target.classList.add('active');
+      if (event && event.target && event.target.classList.contains('tag-btn')) {
+        event.target.classList.add('active');
+      } else {
+        document.getElementById('tagAll').classList.add('active');
+      }
+      let visible = 0;
       entries.forEach(e => {
-        e.style.display = (tag === 'all' || e.dataset.tags.includes(tag)) ? 'block' : 'none';
+        const match = tag === 'all' || e.dataset.tags.includes(tag);
+        e.style.display = match ? 'block' : 'none';
+        if (match) visible++;
       });
+      const emptyEl = document.getElementById('journalEmpty');
+      if (visible === 0) {
+        document.getElementById('journalEmptyLabel').textContent = label;
+        emptyEl.style.display = 'block';
+      } else {
+        emptyEl.style.display = 'none';
+      }
     }
   </script>
 </body>

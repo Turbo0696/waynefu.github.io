@@ -610,6 +610,21 @@ main { flex: 1; }
   background: var(--ink); color: var(--paper); border-color: var(--ink);
 }
 
+.journal-empty {
+  padding: 3rem 0; border-top: 1px solid var(--border);
+}
+.journal-empty p {
+  font-family: var(--display); font-style: italic;
+  font-size: 1.15rem; color: var(--ink-light); margin-bottom: 1rem;
+}
+.journal-empty p em { color: var(--accent); font-style: italic; }
+.journal-empty-clear {
+  font-family: var(--mono); font-size: 0.78rem; letter-spacing: 0.04em;
+  color: var(--accent); background: none; border: none; padding: 0;
+  cursor: pointer; text-decoration: underline;
+}
+.journal-empty-clear:hover { opacity: 0.7; }
+
 .journal-entries { display: flex; flex-direction: column; }
 
 .journal-entry { padding: 3rem 0; border-bottom: 1px solid var(--border); }
