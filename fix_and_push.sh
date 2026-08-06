@@ -1,25 +1,22 @@
 #!/usr/bin/env bash
-# One-shot: configure git identity for this repo, then commit and push.
+# Fix the author on the most recent commit, then push to origin/main.
 set -e
 
 cd "$(dirname "$0")"
 
-echo "--- configuring git identity (repo-local) ---"
+echo "--- setting git identity (repo-local) ---"
 git config user.name "Wayne Fu"
 git config user.email "waynefu@umich.edu"
 
-echo "--- current status ---"
-git status
+echo "--- amending most recent commit with correct author ---"
+git commit --amend --reset-author --no-edit
 
-echo "--- staging all changes ---"
-git add -A
-
-echo "--- committing ---"
-git commit -m "feat(journal): add July 1 aftermarket dynamics entry on R2R and warranty"
+echo "--- verifying log ---"
+git log --oneline -3
 
 echo "--- pushing to origin/main ---"
 echo "(A browser window may open for GitHub authentication — click Authorize.)"
 git push
 
-echo "--- done ---"
+echo "--- done. final log: ---"
 git log --oneline -3

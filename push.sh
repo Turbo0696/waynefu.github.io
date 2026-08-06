@@ -15,7 +15,7 @@ echo "--- staging all changes ---"
 git add -A
 
 echo "--- committing ---"
-git commit -m "feat(journal): add July 1 aftermarket dynamics entry on R2R and warranty"
+git commit -m "fix(index): close truncated html tag at end of document"
 
 echo "--- pushing to origin/main ---"
 echo "(A browser window may open for GitHub authentication — click Authorize.)"
