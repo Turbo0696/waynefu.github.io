@@ -15,7 +15,7 @@ echo "--- staging all changes ---"
 git add -A
 
 echo "--- committing ---"
-git commit -m "feat(contact): add contact page with mailto form and nav links"
+git commit -m "feat(analytics): add GA4 tracking snippet to all pages"
 
 echo "--- pushing to origin/main ---"
 echo "(A browser window may open for GitHub authentication — click Authorize.)"
