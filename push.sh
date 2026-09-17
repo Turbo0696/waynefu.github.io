@@ -15,7 +15,7 @@ echo "--- staging all changes ---"
 git add -A
 
 echo "--- committing ---"
-git commit -m "fix: align nav panel with hamburger; add Detroit News press entry; rename Video to Promotion Video"
+git commit -m "fix: nav panel padding uses var(--content-w) (prior fix hadn't landed); strengthen page-subtitle contrast/weight"
 
 echo "--- pushing to origin/main ---"
 echo "(A browser window may open for GitHub authentication — click Authorize.)"

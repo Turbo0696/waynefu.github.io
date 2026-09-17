@@ -76,15 +76,15 @@ ul { list-style: none; }
 }
 
 /* Nav panel — opened by the hamburger, at every screen size.
-   Left/right padding mirrors .nav-inner's centering (max-width 860px + 2rem)
-   so the panel's items line up with the hamburger/name above them. */
+   Left/right padding mirrors .nav-inner's centering (var(--content-w) + 2rem)
+   so the panel's items line up with the hamburger/name above them, on every page. */
 .nav-links {
   display: none; flex-direction: column;
   position: absolute; top: var(--nav-h); left: 0; right: 0;
   background: var(--paper); border-bottom: 1px solid var(--border);
   padding-top: 1.25rem; padding-bottom: 1.75rem;
-  padding-left: max(2rem, calc((100vw - 860px) / 2 + 2rem));
-  padding-right: max(2rem, calc((100vw - 860px) / 2 + 2rem));
+  padding-left: max(2rem, calc((100vw - var(--content-w)) / 2 + 2rem));
+  padding-right: max(2rem, calc((100vw - var(--content-w)) / 2 + 2rem));
   gap: 1rem;
   z-index: 150; max-height: calc(100vh - var(--nav-h)); overflow-y: auto;
   box-shadow: 0 8px 20px rgba(0,0,0,0.06);
@@ -160,7 +160,7 @@ main { flex: 1; }
 
 .page-subtitle {
   margin-top: 0.75rem; font-size: 1.05rem;
-  color: var(--ink-light); font-weight: 300;
+  color: var(--ink); font-weight: 400;
 }
 
 /* ---- ABOUT / HERO ---- */
