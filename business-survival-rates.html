@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Why Michigan's #5 ranking in business survival is the wrong way to read the data — and what looking at the state's own trend actually shows. By Wayne Fu.">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WRL4F3J700"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WRL4F3J700');
+  </script>
+  <title>Reading the "Michigan Ranks #5" Business Survival Story — Wayne Fu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .article-meta {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      color: var(--ink-faint);
+      text-transform: uppercase;
+      margin: -1rem 0 2.5rem;
+    }
+    .entry-body { max-width: 680px; }
+    .entry-body p, .entry-body li { max-width: 680px; }
+    .pull-quote {
+      max-width: 680px;
+      margin: 1.8rem 0;
+      padding: 0.9rem 1.4rem;
+      border-left: 3px solid var(--accent);
+      background: var(--paper-warm, #f7f3ee);
+      font-family: var(--display);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--ink);
+    }
+    .pull-quote cite {
+      display: block;
+      margin-top: 0.5rem;
+      font-family: 'IBM Plex Mono', monospace;
+      font-style: normal;
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+    }
+    .aside-term {
+      max-width: 680px;
+      margin: 1.6rem 0;
+      padding: 0.9rem 1.2rem;
+      border: 1px solid var(--ink-faint, #ccc);
+      border-radius: 6px;
+      font-size: 0.92rem;
+    }
+    .aside-term strong { color: var(--accent); }
+    .widget-embed {
+      margin: 2.2rem 0;
+      border: 1px solid var(--ink-faint, #ddd);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .article-sources {
+      max-width: 680px;
+      margin-top: 3rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--ink-faint, #ddd);
+      font-size: 0.82rem;
+      color: var(--ink-faint);
+      line-height: 1.7;
+    }
+    .article-sources a { color: var(--ink-faint); text-decoration: underline; }
+  </style>
+
+  <!-- Scoped styles for the embedded "Cohort Survival Explorer" widget.
+       All selectors are prefixed with .viz-root so this cannot leak into
+       (or be overridden by) the site-wide style.css rules for h1/p/etc. -->
+  <style>
+    .viz-root {
+      color-scheme: light;
+      --surface-1:     #fcfcfb;
+      --plane:         #f9f9f7;
+      --text-primary:  #0b0b0b;
+      --text-secondary:#52514e;
+      --muted:         #898781;
+      --grid:          #e1e0d9;
+      --baseline:      #c3c2b7;
+      --border:        rgba(11,11,11,0.10);
+      --accent:        #2a78d6;
+      --accent-wash:   #eaf1fb;
+      --chip-bg:       #ffffff;
+
+      --series-1: #2a78d6; --series-2: #eb6834; --series-3: #1baf7a; --series-4: #eda100;
+      --series-5: #e87ba4; --series-6: #008300; --series-7: #4a3aa7; --series-8: #e34948;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:where(:not([data-theme="light"])) .viz-root {
+        color-scheme: dark;
+        --surface-1:     #1a1a19;
+        --plane:         #0d0d0d;
+        --text-primary:  #ffffff;
+        --text-secondary:#c3c2b7;
+        --muted:         #898781;
+        --grid:          #2c2c2a;
+        --baseline:      #383835;
+        --border:        rgba(255,255,255,0.10);
+        --accent:        #3987e5;
+        --accent-wash:   #16283e;
+        --chip-bg:       #232322;
+
+        --series-1: #3987e5; --series-2: #d95926; --series-3: #199e70; --series-4: #c98500;
+        --series-5: #d55181; --series-6: #008300; --series-7: #9085e9; --series-8: #e66767;
+      }
+    }
+    :root[data-theme="dark"] .viz-root {
+      color-scheme: dark;
+      --surface-1:     #1a1a19;
+      --plane:         #0d0d0d;
+      --text-primary:  #ffffff;
+      --text-secondary:#c3c2b7;
+      --muted:         #898781;
+      --grid:          #2c2c2a;
+      --baseline:      #383835;
+      --border:        rgba(255,255,255,0.10);
+      --accent:        #3987e5;
+      --accent-wash:   #16283e;
+      --chip-bg:       #232322;
+
+      --series-1: #3987e5; --series-2: #d95926; --series-3: #199e70; --series-4: #c98500;
+      --series-5: #d55181; --series-6: #008300; --series-7: #9085e9; --series-8: #e66767;
+    }
+
+    .viz-root, .viz-root * { box-sizing: border-box; }
+    .viz-root {
+      background: var(--plane);
+      color: var(--text-primary);
+      font-family: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+      min-height: auto;
+      padding: 24px 20px 32px;
+      border-radius: 10px;
+    }
+    .viz-root .wrap { max-width: 1080px; margin: 0 auto; }
+
+    .viz-root header.page { margin-bottom: 22px; }
+    .viz-root .eyebrow {
+      font-family: "IBM Plex Mono", ui-monospace, "SF Mono", monospace;
+      font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--muted); margin: 0 0 8px;
+    }
+    .viz-root h1 {
+      font-family: "IBM Plex Mono", ui-monospace, "SF Mono", monospace;
+      font-weight: 600; font-size: clamp(22px, 3.4vw, 30px);
+      letter-spacing: -0.01em; margin: 0 0 8px; text-wrap: balance;
+    }
+    .viz-root p.lede {
+      color: var(--text-secondary); font-size: 14.5px; line-height: 1.55;
+      max-width: 66ch; margin: 0;
+    }
+    .viz-root p.lede code {
+      font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.92em;
+      background: var(--accent-wash); color: var(--accent); padding: 1px 5px; border-radius: 4px;
+    }
+
+    .viz-root .panel {
+      background: var(--surface-1); border: 1px solid var(--border); border-radius: 12px;
+      padding: 18px 20px; margin-top: 20px;
+    }
+
+    .viz-root .control-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 14px; }
+    .viz-root .search-box { position: relative; flex: 1 1 260px; min-width: 220px; }
+    .viz-root .search-box input {
+      width: 100%; font: inherit; font-size: 14px; padding: 9px 12px;
+      border: 1px solid var(--border); border-radius: 8px;
+      background: var(--plane); color: var(--text-primary);
+    }
+    .viz-root .search-box input:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .viz-root .search-results {
+      position: absolute; top: calc(100% + 4px); left: 0; right: 0; z-index: 20;
+      background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px;
+      max-height: 240px; overflow-y: auto; box-shadow: 0 8px 24px rgba(0,0,0,0.16);
+      display: none;
+    }
+    .viz-root .search-results.open { display: block; }
+    .viz-root .search-results button {
+      display: flex; align-items: center; gap: 8px; width: 100%; text-align: left;
+      font: inherit; font-size: 13.5px; padding: 8px 12px; border: none; background: none;
+      color: var(--text-primary); cursor: pointer;
+    }
+    .viz-root .search-results button:hover, .viz-root .search-results button.active-option { background: var(--accent-wash); }
+    .viz-root .search-results .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--muted); flex: none; }
+    .viz-root .search-results .rate { margin-left: auto; font-family: "IBM Plex Mono", monospace; font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+    .viz-root .presets { display: flex; flex-wrap: wrap; gap: 8px; }
+    .viz-root .preset-btn, .viz-root .clear-btn, .viz-root .table-toggle {
+      font: inherit; font-size: 12.5px; font-weight: 500; padding: 7px 12px;
+      border-radius: 999px; border: 1px solid var(--border); background: var(--surface-1);
+      color: var(--text-secondary); cursor: pointer; white-space: nowrap;
+    }
+    .viz-root .preset-btn:hover, .viz-root .clear-btn:hover, .viz-root .table-toggle:hover { border-color: var(--accent); color: var(--accent); }
+    .viz-root .table-toggle.is-active { background: var(--accent); color: #fff; border-color: var(--accent); }
+
+    .viz-root .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+    .viz-root .chip {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--chip-bg); border: 1px solid var(--border); border-radius: 999px;
+      padding: 5px 6px 5px 10px; font-size: 13px; cursor: default;
+    }
+    .viz-root .chip .sw { width: 9px; height: 9px; border-radius: 50%; flex: none; }
+    .viz-root .chip button {
+      border: none; background: none; color: var(--muted); cursor: pointer; font-size: 15px;
+      line-height: 1; padding: 2px 4px; border-radius: 50%;
+    }
+    .viz-root .chip button:hover { background: var(--accent-wash); color: var(--accent); }
+    .viz-root .chip.dimmed { opacity: 0.45; }
+
+    .viz-root .chart-card { margin-top: 14px; }
+    .viz-root .chart-head {
+      display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+      margin-bottom: 6px; flex-wrap: wrap;
+    }
+    .viz-root .chart-title { font-weight: 600; font-size: 14px; }
+    .viz-root .chart-sub { font-size: 12px; color: var(--muted); }
+
+    .viz-root svg.chart { width: 100%; height: auto; display: block; overflow: visible; }
+    .viz-root .gridline { stroke: var(--grid); stroke-width: 1; }
+    .viz-root .baseline { stroke: var(--baseline); stroke-width: 1; }
+    .viz-root .axis-label { fill: var(--muted); font-family: "IBM Plex Mono", monospace; font-size: 10.5px; }
+    .viz-root .series-line { fill: none; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; filter: saturate(1.35); }
+    .viz-root .series-line.dim { opacity: 0.18; }
+    .viz-root .series-dot { stroke: var(--surface-1); stroke-width: 1.5; filter: saturate(1.35); }
+    .viz-root .series-dot.dim { opacity: 0.18; }
+    .viz-root .end-label { font-family: "IBM Plex Mono", monospace; font-size: 11px; font-weight: 600; }
+    .viz-root .end-label.dim { opacity: 0.18; }
+
+    .viz-root .crosshair { stroke: var(--muted); stroke-width: 1; stroke-dasharray: 2 3; pointer-events: none; opacity: 0; }
+    .viz-root .hover-capture { fill: transparent; }
+
+    .viz-root .box-whisker { stroke-width: 1.6; filter: saturate(1.35); }
+    .viz-root .box-cap { stroke-width: 1.6; filter: saturate(1.35); }
+    .viz-root .box-rect { stroke-width: 2; fill-opacity: 0.24; filter: saturate(1.35); }
+    .viz-root .box-median { stroke-width: 2.5; filter: saturate(1.35); }
+    .viz-root .box-mean { stroke-width: 1.5; filter: saturate(1.35); }
+    .viz-root .box-outlier { stroke-width: 1.5; filter: saturate(1.35); }
+    .viz-root .box-group.dim .box-whisker, .viz-root .box-group.dim .box-cap, .viz-root .box-group.dim .box-rect,
+    .viz-root .box-group.dim .box-median, .viz-root .box-group.dim .box-mean, .viz-root .box-group.dim .box-outlier,
+    .viz-root .box-group.dim .box-cat-label { opacity: 0.18; }
+    .viz-root .box-cat-label { font-family: "IBM Plex Mono", monospace; font-size: 10.5px; fill: var(--text-secondary); font-weight: 600; text-anchor: middle; }
+    .viz-root .box-hit { fill: transparent; cursor: pointer; }
+
+    .viz-root .chart-controls { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+    .viz-root .mode-toggle { display: inline-flex; border: 1px solid var(--border); border-radius: 999px; overflow: hidden; }
+    .viz-root .mode-toggle button {
+      font: inherit; font-size: 12.5px; font-weight: 500; padding: 7px 14px;
+      border: none; background: var(--surface-1); color: var(--text-secondary); cursor: pointer; white-space: nowrap;
+    }
+    .viz-root .mode-toggle button + button { border-left: 1px solid var(--border); }
+    .viz-root .mode-toggle button.is-active { background: var(--accent); color: #fff; }
+    .viz-root .mode-toggle button:hover:not(.is-active) { color: var(--accent); }
+
+    .viz-root .tooltip {
+      position: absolute; pointer-events: none; z-index: 30;
+      background: var(--surface-1); border: 1px solid var(--border); border-radius: 8px;
+      padding: 8px 10px; font-size: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+      opacity: 0; transform: translate(-50%, -110%); transition: opacity 0.08s ease;
+      min-width: 150px;
+    }
+    .viz-root .tooltip.show { opacity: 1; }
+    .viz-root .tooltip .t-year { font-family: "IBM Plex Mono", monospace; color: var(--muted); font-size: 11px; margin-bottom: 5px; }
+    .viz-root .tooltip .t-row { display: flex; align-items: center; gap: 6px; padding: 1px 0; }
+    .viz-root .tooltip .t-row .sw { width: 8px; height: 8px; border-radius: 50%; flex: none; }
+    .viz-root .tooltip .t-row .name { flex: 1; }
+    .viz-root .tooltip .t-row .val { font-family: "IBM Plex Mono", monospace; font-variant-numeric: tabular-nums; font-weight: 600; }
+
+    .viz-root .legend { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border); }
+    .viz-root .legend-item { display: flex; align-items: center; gap: 7px; font-size: 12.5px; cursor: pointer; color: var(--text-secondary); }
+    .viz-root .legend-item .sw { width: 10px; height: 3px; border-radius: 2px; flex: none; }
+    .viz-root .legend-item strong { color: var(--text-primary); font-weight: 600; }
+    .viz-root .legend-item .lv { font-family: "IBM Plex Mono", monospace; font-variant-numeric: tabular-nums; color: var(--muted); }
+
+    .viz-root .empty-state { text-align: center; padding: 60px 20px; color: var(--muted); font-size: 13.5px; }
+
+    .viz-root table.data-table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin-top: 6px; }
+    .viz-root table.data-table caption { caption-side: top; text-align: left; font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+    .viz-root table.data-table th, .viz-root table.data-table td {
+      padding: 6px 9px; text-align: right; border-bottom: 1px solid var(--grid);
+      font-variant-numeric: tabular-nums; white-space: nowrap;
+    }
+    .viz-root table.data-table th:first-child, .viz-root table.data-table td:first-child { text-align: left; }
+    .viz-root table.data-table thead th {
+      font-family: "IBM Plex Mono", monospace; font-weight: 600; color: var(--muted);
+      font-size: 11px; border-bottom: 1px solid var(--baseline);
+    }
+    .viz-root table.data-table tbody tr:hover { background: var(--accent-wash); }
+    .viz-root table.data-table .sw { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; }
+    .viz-root .table-scroll { overflow-x: auto; }
+
+    .viz-root footer.note { margin-top: 18px; font-size: 11.5px; color: var(--muted); line-height: 1.6; max-width: 74ch; }
+    .viz-root footer.note a { color: var(--muted); }
+
+    @media (max-width: 560px) {
+      .viz-root .panel { padding: 14px; }
+      .viz-root h1 { font-size: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-name"><a href="index.html">Wayne Fu</a></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Latest</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="nav-dropdown">
+        <span class="nav-dropdown-label">Journals ▾</span>
+        <ul class="dropdown-menu">
+          <li><a href="journal.html">Aftermarket Dynamics</a></li>
+          <li><a href="journal2.html">Chemical Use</a></li>
+        </ul>
+      </li>
+      <li><a href="industry.html">Industry Stories</a></li>
+      <li><a href="work.html">Current Work</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+    </ul>
+    <button class="nav-toggle" onclick="toggleNav()">☰</button>
+  </nav>
+
+  <main class="page-inner">
+
+    <div class="page-header">
+      <h1>What "Michigan Ranks <em>#5</em>" Actually Tells You</h1>
+      <p class="page-subtitle">A note on reading business-survival rankings — and what Michigan's own trend line shows once you look past the leaderboard</p>
+    </div>
+    <p class="article-meta">September 2026 · Wayne Fu · Prompted by a Detroit News media request</p>
+
+    <article class="entry-body">
+
+      <p>In late August, a Detroit News reporter reached out about a new study ranking Michigan No. 5 in the country for five-year business survival — the share of new businesses still open five years after opening. It's a nice headline. It's also, on its own, close to meaningless. Here's why, and what the data actually says once you ask better questions of it.</p>
+
+      <h3>The number behind the headline</h3>
+      <p>The underlying source is real: the U.S. Bureau of Labor Statistics' Business Employment Dynamics program tracks cohorts of establishments from the year they open and measures what share are still active one, two, three, four, and five years later. A private report (Build Your Store) ran the numbers and put Michigan's five-year survival rate at 54.7%, good for 5th nationally — behind Minnesota (56.2%), a Pennsylvania/West Virginia tie (55.9%), and Illinois (55.2%). That's a real, defensible number. The problem is what people do with it next: turn a noisy, moving measurement into a fixed identity ("Michigan is a top-5 state for business survival").</p>
+
+      <h3>A rank is not a measurement</h3>
+      <p>When I pulled Michigan's rank across recent years for the reporter, it looked like this: 11th in 2015, 27th in 2020, 6th in 2023, back to 11th in 2024. That's not a state whose fundamentals are swinging wildly year to year — it's what happens when roughly 50 states are packed into a narrow band, mostly between 45% and 57%. A move of one or two-tenths of a percentage point can flip a dozen spots in the standings. Rank amplifies noise that the underlying rate doesn't actually contain. Treat any single year's rank as a snapshot of measurement error, not a report card.</p>
+
+      <h3>Compare yourself to the field, not just to your past self</h3>
+      <p>This cuts both ways, and it's the piece most coverage skips. A state can post a genuinely higher number than last year and still fall in rank — because everyone else moved too. Michigan's own five-year rate held in a strong, fairly stable range from 2022 through 2024, yet its rank still slipped from 6th to 11th over that stretch, simply because other states improved faster. The reverse is also true: a flat or even declining rate can still look like "climbing the ranks" if peers are declining faster. Either way, the story is really about the field, not about you — which is exactly why the national average has to be part of every comparison, not an afterthought.</p>
+
+      <div class="aside-term">
+        <strong>The selection problem hiding underneath the number.</strong> There's a subtler issue, and it's the one I kept coming back to in the interview. A state's survival rate isn't a clean measure of "how good this place is to run a business" — it's partly a measure of <em>who bothered to start a business there in the first place</em>. Make it very easy and cheap to open a shop, and you'll pull in more casual, under-capitalized, first-time entrants — some of whom were always more likely to fold, regardless of the local economy. Make it slower and more regulatory-heavy, and only more serious, better-capitalized founders bother — which mechanically pushes the survival rate up, even if the state itself isn't "better" for business. Economists call this a <strong>selection effect</strong> (formally, a version of the <strong>Heckman selection problem</strong>): the group you're measuring outcomes for isn't a random sample, it self-selected in a way that's correlated with the outcome you're measuring. In plain terms: easy-entry places look artificially worse, high-barrier places look artificially better, and neither necessarily says anything about how healthy the underlying business climate is. A high survival rate can mean "great place to build a business" or it can mean "hard enough to get started here that only the most determined try" — the raw number can't tell those apart.
+      </div>
+
+      <h3>Read your own line, not the leaderboard</h3>
+      <p>The best antidote to rank-chasing is to stop looking at rank at all and look at a state's own trajectory over time — which is what the tool below is built for. Pick a few states, or just leave Michigan selected, and watch the line rather than a single year's position.</p>
+
+      <div class="widget-embed">
+        <!-- BLS Business Employment Dynamics — Cohort Survival Explorer -->
+        <div class="viz-root">
+          <div class="wrap">
+            <header class="page">
+              <p class="eyebrow">BLS Business Employment Dynamics · Table 7</p>
+              <h1>Cohort Survival Explorer</h1>
+              <p class="lede">
+                Of the private-sector establishments that opened in a given year, what share were
+                still operating five years later? Pick any states below to compare their
+                <code>5-year survival rate</code> across opening cohorts from 2010 through 2020.
+              </p>
+            </header>
+
+            <div class="panel">
+              <div class="control-row">
+                <div class="search-box">
+                  <input id="search-input" type="text" placeholder="Add a state or &quot;National&quot;…" autocomplete="off" aria-label="Search states to add to the chart" />
+                  <div id="search-results" class="search-results" role="listbox"></div>
+                </div>
+                <div class="presets" id="presets"></div>
+              </div>
+              <div class="chips" id="chips"></div>
+            </div>
+
+            <div class="panel chart-card">
+              <div class="chart-head">
+                <div>
+                  <div class="chart-title">5-year survival rate by opening cohort</div>
+                  <div class="chart-sub" id="chart-sub">x-axis: year the cohort reached its 5-year mark (opened 5 years earlier)</div>
+                </div>
+                <div class="chart-controls">
+                  <div class="mode-toggle" id="mode-toggle" role="group" aria-label="Chart type">
+                    <button type="button" data-mode="timeseries" class="is-active" aria-pressed="true">Time series</button>
+                    <button type="button" data-mode="boxplot" aria-pressed="false">Box plot</button>
+                  </div>
+                  <button class="table-toggle" id="table-toggle" type="button" aria-pressed="false">View as table</button>
+                </div>
+              </div>
+
+              <div id="chart-container" style="position:relative;"></div>
+              <div id="table-container" class="table-scroll" style="display:none;"></div>
+
+              <div class="legend" id="legend"></div>
+            </div>
+
+            <footer class="note">
+              Source: U.S. Bureau of Labor Statistics, Business Employment Dynamics, establishment age &amp;
+              survival tables, Table 7 (state files, <span style="font-family:'IBM Plex Mono',monospace;">bls.gov/bdm/bdmage.htm</span>),
+              retrieved August 2026. Each point is the share of establishments opened in a given March-ending
+              year that were still active exactly five years later — e.g. the "2020" point on the x-axis is
+              the March 2015 cohort measured at March 2020. A few states' raw BLS series contain isolated
+              jumps from underlying data revisions (noticeable in Washington, Virginia, and a handful of
+              others) — those are reproduced as published, not smoothed over.
+            </footer>
+          </div>
+        </div>
+      </div>
+
+      <h3>So — is Michigan actually doing better?</h3>
+      <p>Trace Michigan's own line and the honest answer is: modestly, and mostly it's a recovery, not a breakout. The rate dipped to about 49% for the cohort measured in 2020 — the pandemic-era low the Detroit News piece flagged — then climbed back to roughly 55% by 2025. Net across the full decade, that's close to a one-point gain (from about 54% in 2015 to about 55% in 2025), against a national average that itself only moved from about 51% to about 51%. Michigan has held a fairly steady edge over the national line for most of the decade — it just spent 2020 on the wrong side of it. That's a real, if unglamorous, story: Michigan mostly re-set after a pandemic dip and is back in its usual range, holding a consistent few-point premium over the country as a whole. It is not a state whose business-survival fundamentals have suddenly leapt forward, and it isn't a top-5 state in any way that should be read as durable or structural.</p>
+
+      <p>Which is close to what I told the reporter directly:</p>
+
+      <div class="pull-quote">
+        "The percentage is higher, that's it. Doesn't mean it's easier or good to run a business."
+        <cite>Wayne Fu, quoted in <em>The Detroit News</em>, Aug. 28, 2026</cite>
+      </div>
+
+      <p>None of this is a knock on Michigan, or on the reporters who cover these studies — a ranking is a genuinely useful hook for a story about real entrepreneurs doing real work (the piece profiled a Roseville painting company that grew from three people to 53 employees, and a Ferndale butcher-shop-turned-restaurant built with help from local financing programs). The point is narrower: the number that makes the headline — this year's rank — is close to the least informative way to read this dataset. The trend line, compared honestly against the national trend and read with an eye toward who's self-selecting into the sample, tells you far more.</p>
+
+    </article>
+
+    <div class="article-sources">
+      <p><strong>Sources &amp; further reading:</strong>
+        <a href="https://www.bls.gov/bdm/bdmage.htm" target="_blank">BLS Business Employment Dynamics — Survival Table 7 (by state)</a> ·
+        <a href="https://startbusinessbystate.com/business-survival-rates-by-state/" target="_blank">Build Your Store, "Business Survival Rates by State"</a> ·
+        Myesha Johnson, <a href="https://www.proquest.com/wire-feeds/why-michigan-is-top-state-new-business-survival/docview/3379431789/se-2" target="_blank">"Why Michigan Is a Top State for New Business Survival,"</a> <em>The Detroit News</em> / TCA Regional News, Aug. 28, 2026.
+      </p>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Wayne Fu · University of Michigan-Dearborn · <a href="mailto:waynefu@umich.edu">waynefu@umich.edu</a></p>
+  </footer>
+
+  <script src="nav.js"></script>
+  <script>
+(function () {
+  "use strict";
+
+  // ---- Data: 5-year survival rate (%) by opening-cohort year, observed 5 years later ----
+  // birthYears 2010..2020 -> observed at obsYears 2015..2025
+  var obsYears = [2015,2016,2017,2018,2019,2020,2021,2022,2023,2024,2025];
+  var birthYears = [2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020];
+
+  var raw = {
+    "National (US)": [51.1,50.9,50.1,50.6,50.8,50.2,50.7,51.6,51.9,51.5,51.4],
+    "Alabama": [50.0,51.2,50.5,52.7,52.0,51.9,50.7,52.2,54.4,52.9,51.4],
+    "Alaska": [49.8,51.7,48.3,53.0,52.2,44.6,49.6,52.7,57.4,56.6,50.8],
+    "Arizona": [48.4,48.5,48.2,49.1,48.1,48.1,49.9,49.3,49.7,49.6,52.1],
+    "Arkansas": [46.8,44.7,45.3,47.1,49.9,46.3,47.2,46.4,49.3,49.5,48.0],
+    "California": [55.8,55.5,53.4,52.6,53.0,52.5,52.7,54.8,53.6,54.5,53.7],
+    "Colorado": [48.4,49.3,49.9,49.8,50.0,48.6,51.5,50.6,49.9,49.0,48.5],
+    "Connecticut": [54.7,48.7,49.6,49.4,44.2,45.9,45.2,48.5,51.1,57.5,51.1],
+    "Delaware": [45.4,47.4,48.1,47.5,50.0,45.6,46.6,45.0,48.1,47.3,48.1],
+    "Florida": [46.9,49.3,48.5,49.4,49.9,49.6,49.4,50.1,50.6,50.0,49.5],
+    "Georgia": [50.4,51.5,51.5,49.7,49.9,45.8,44.6,49.6,48.9,49.2,49.9],
+    "Hawaii": [54.5,55.4,53.1,51.7,51.9,48.5,47.3,51.9,50.4,50.0,51.0],
+    "Idaho": [47.9,48.0,49.0,50.0,49.7,50.8,54.3,52.5,47.9,47.2,45.6],
+    "Illinois": [50.8,50.7,50.9,49.7,51.0,52.4,51.5,54.2,55.1,54.9,55.6],
+    "Indiana": [50.5,50.5,51.3,53.7,52.7,52.2,53.7,53.2,53.2,53.4,54.3],
+    "Iowa": [53.8,55.3,55.3,53.6,54.8,54.5,52.1,53.3,53.7,53.4,53.7],
+    "Kansas": [49.2,48.3,48.8,48.7,49.9,48.2,42.0,46.9,46.5,46.9,47.4],
+    "Kentucky": [49.5,51.8,51.7,49.5,50.0,50.3,52.1,50.8,52.2,52.7,54.1],
+    "Louisiana": [51.1,48.5,49.9,49.3,50.3,50.6,52.8,52.1,53.3,52.8,52.9],
+    "Maine": [51.7,51.4,54.7,53.2,52.7,51.9,53.5,46.1,53.2,53.0,54.9],
+    "Maryland": [49.9,50.0,48.3,48.7,48.9,50.5,48.8,49.5,48.0,49.0,50.1],
+    "Massachusetts": [60.2,59.4,55.8,55.2,55.6,53.6,54.8,54.8,54.9,53.7,52.7],
+    "Michigan": [54.0,52.2,53.0,50.9,50.7,49.0,51.8,52.4,55.3,54.0,55.0],
+    "Minnesota": [54.2,52.4,57.2,54.6,54.8,56.0,55.0,54.0,57.6,56.2,54.9],
+    "Mississippi": [48.2,48.8,47.6,49.1,49.9,51.1,50.8,55.1,51.9,52.8,53.5],
+    "Missouri": [51.9,50.9,53.7,49.0,46.8,45.7,44.8,39.5,44.6,43.2,42.9],
+    "Montana": [54.1,52.9,53.4,52.4,56.1,53.3,56.5,56.0,54.7,53.9,53.0],
+    "Nebraska": [55.4,54.6,42.4,44.9,46.3,48.1,48.2,48.3,50.9,50.4,50.9],
+    "Nevada": [48.1,49.1,47.0,47.7,48.0,46.8,47.2,48.2,47.1,47.7,47.6],
+    "New Hampshire": [48.5,47.2,48.8,48.2,47.0,45.6,46.5,47.6,46.0,48.9,47.7],
+    "New Jersey": [46.9,46.7,46.4,48.2,48.5,49.0,49.7,48.9,49.3,50.1,50.5],
+    "New Mexico": [46.1,45.1,46.9,47.0,46.3,49.3,46.8,50.5,48.1,48.6,46.3],
+    "New York": [51.1,50.9,49.9,50.4,49.8,48.1,47.2,49.1,49.8,49.5,51.9],
+    "North Carolina": [51.3,50.8,50.9,51.5,51.9,51.1,51.5,53.9,53.0,54.1,54.2],
+    "North Dakota": [57.5,54.1,42.0,45.0,47.4,46.4,51.9,51.5,51.0,53.0,54.4],
+    "Ohio": [52.1,54.0,53.5,53.2,53.1,52.5,50.3,53.3,53.7,55.1,54.4],
+    "Oklahoma": [51.2,50.9,51.1,52.1,50.6,47.6,50.0,50.4,51.2,50.1,50.2],
+    "Oregon": [50.2,51.1,51.2,51.2,52.7,57.9,58.2,58.9,53.0,52.3,45.8],
+    "Pennsylvania": [49.3,47.2,46.3,49.6,51.7,50.6,51.2,54.3,54.6,56.1,57.1],
+    "Rhode Island": [48.9,49.9,47.8,47.2,47.5,47.0,47.7,46.1,49.8,48.2,48.1],
+    "South Carolina": [49.3,49.6,48.5,50.5,49.0,48.8,50.1,50.0,50.7,52.0,55.9],
+    "South Dakota": [56.2,51.6,56.0,56.0,52.5,52.2,54.7,55.7,56.1,55.0,52.7],
+    "Tennessee": [46.8,47.2,48.2,48.1,49.0,49.5,51.3,51.6,52.9,51.9,46.4],
+    "Texas": [52.1,51.6,51.3,50.7,51.5,50.9,51.2,50.9,52.7,53.1,52.5],
+    "Utah": [50.3,50.5,51.8,52.3,49.5,49.8,50.8,51.0,50.5,49.9,49.7],
+    "Vermont": [51.3,51.4,50.6,48.0,51.5,48.1,49.5,48.9,50.3,51.4,46.6],
+    "Virginia": [49.0,48.5,48.0,47.6,47.0,45.6,49.2,52.0,56.5,47.5,48.8],
+    "Washington": [43.4,42.8,34.3,49.8,46.9,47.2,55.4,49.5,46.5,38.0,42.2],
+    "West Virginia": [51.5,50.2,48.7,47.2,49.5,52.2,57.2,54.7,57.2,57.4,53.6],
+    "Wisconsin": [56.4,56.3,55.1,54.1,52.6,52.5,51.6,50.9,52.3,52.2,52.4],
+    "Wyoming": [50.5,46.0,47.4,47.5,48.5,44.5,47.5,48.9,48.0,47.6,47.5],
+    "District of Columbia": [47.7,48.1,44.5,44.9,38.9,42.8,43.7,43.7,41.8,44.7,42.4]
+  };
+
+  var stateNames = Object.keys(raw).sort(function (a, b) {
+    if (a === "National (US)") return -1;
+    if (b === "National (US)") return 1;
+    return a.localeCompare(b);
+  });
+
+  var PALETTE = ["--series-1","--series-2","--series-3","--series-4","--series-5","--series-6","--series-7","--series-8"];
+
+  var PRESETS = [
+    { label: "Rust Belt", states: ["Michigan","Ohio","Illinois","Indiana","Wisconsin","Pennsylvania"] },
+    { label: "MI · IL · KY · PA", states: ["Michigan","Illinois","Kentucky","Pennsylvania"] },
+    { label: "Big 4 by population", states: ["California","Texas","Florida","New York"] },
+    { label: "2020-cohort top 5", states: ["Pennsylvania","South Carolina","Illinois","Michigan","Maine"] },
+    { label: "Most volatile", states: ["Washington","National (US)","District of Columbia","Missouri","Wisconsin"] }
+  ];
+
+  var root = document.querySelector(".widget-embed .viz-root");
+  var chipsEl = root.querySelector("#chips");
+  var chartContainer = root.querySelector("#chart-container");
+  var tableContainer = root.querySelector("#table-container");
+  var legendEl = root.querySelector("#legend");
+  var searchInput = root.querySelector("#search-input");
+  var searchResults = root.querySelector("#search-results");
+  var presetsEl = root.querySelector("#presets");
+  var tableToggle = root.querySelector("#table-toggle");
+  var modeToggle = root.querySelector("#mode-toggle");
+  var chartSubEl = root.querySelector("#chart-sub");
+
+  var selected = [];     // ordered array of state names
+  var colorOf = {};      // state name -> css var
+  var hovered = null;    // state name currently hovered in legend/chips
+  var showTable = false;
+  var chartMode = "timeseries"; // "timeseries" | "boxplot"
+
+  var CHART_SUB = {
+    timeseries: "x-axis: year the cohort reached its 5-year mark (opened 5 years earlier)",
+    boxplot: "distribution across the 2010–2020 opening cohorts — box = IQR (25th–75th pct.), line = median, ◆ = mean, dots = outliers beyond 1.5×IQR"
+  };
+
+  function assignColors() {
+    colorOf = {};
+    selected.forEach(function (name, i) {
+      colorOf[name] = "var(" + PALETTE[i % PALETTE.length] + ")";
+    });
+  }
+
+  function addState(name) {
+    if (!name || selected.indexOf(name) !== -1 || !raw[name]) return;
+    selected.push(name);
+    assignColors();
+    render();
+  }
+  function removeState(name) {
+    selected = selected.filter(function (s) { return s !== name; });
+    assignColors();
+    render();
+  }
+  function clearAll() {
+    selected = [];
+    assignColors();
+    render();
+  }
+
+  // ---------- search / combobox ----------
+  function fmtPct(v) { return v.toFixed(1) + "%"; }
+
+  function renderSearchResults(query) {
+    var q = query.trim().toLowerCase();
+    var list = stateNames.filter(function (n) {
+      return selected.indexOf(n) === -1 && (q === "" || n.toLowerCase().indexOf(q) !== -1);
+    });
+
+    if (list.length === 0) { searchResults.classList.remove("open"); searchResults.innerHTML = ""; return; }
+
+    searchResults.innerHTML = list.map(function (n) {
+      var last = raw[n][raw[n].length - 1];
+      return '<button type="button" role="option" data-state="' + n.replace(/"/g,"&quot;") + '">' +
+        '<span class="dot"></span><span>' + n + '</span>' +
+        '<span class="rate">' + fmtPct(last) + '</span></button>';
+    }).join("");
+    searchResults.classList.add("open");
+  }
+
+  searchInput.addEventListener("input", function () { renderSearchResults(searchInput.value); });
+  searchInput.addEventListener("focus", function () { renderSearchResults(searchInput.value); });
+  searchInput.addEventListener("keydown", function (e) {
+    if (e.key === "Enter") {
+      var first = searchResults.querySelector("button");
+      if (first) { addState(first.getAttribute("data-state")); searchInput.value = ""; searchResults.classList.remove("open"); }
+    } else if (e.key === "Escape") {
+      searchResults.classList.remove("open");
+    }
+  });
+  searchResults.addEventListener("click", function (e) {
+    var btn = e.target.closest("button[data-state]");
+    if (!btn) return;
+    addState(btn.getAttribute("data-state"));
+    searchInput.value = "";
+    searchInput.focus();
+    renderSearchResults("");
+  });
+  document.addEventListener("click", function (e) {
+    if (!root.contains(e.target)) return;
+    if (!e.target.closest(".search-box")) searchResults.classList.remove("open");
+  });
+
+  // ---------- presets ----------
+  presetsEl.innerHTML = PRESETS.map(function (p, i) {
+    return '<button type="button" class="preset-btn" data-preset="' + i + '">' + p.label + '</button>';
+  }).join("") + '<button type="button" class="clear-btn" id="clear-btn">Clear</button>';
+
+  presetsEl.addEventListener("click", function (e) {
+    var pb = e.target.closest("button[data-preset]");
+    if (pb) {
+      var idx = +pb.getAttribute("data-preset");
+      selected = PRESETS[idx].states.filter(function (n) { return raw[n]; }).slice();
+      assignColors();
+      render();
+      return;
+    }
+    if (e.target.id === "clear-btn") clearAll();
+  });
+
+  // ---------- table toggle ----------
+  tableToggle.addEventListener("click", function () {
+    showTable = !showTable;
+    tableToggle.classList.toggle("is-active", showTable);
+    tableToggle.setAttribute("aria-pressed", String(showTable));
+    tableToggle.textContent = showTable ? "View as chart" : "View as table";
+    render();
+  });
+
+  // ---------- chart-type (time series / box plot) toggle ----------
+  modeToggle.addEventListener("click", function (e) {
+    var btn = e.target.closest("button[data-mode]");
+    if (!btn) return;
+    var mode = btn.getAttribute("data-mode");
+    if (mode === chartMode) return;
+    chartMode = mode;
+    modeToggle.querySelectorAll("button").forEach(function (b) {
+      var active = b === btn;
+      b.classList.toggle("is-active", active);
+      b.setAttribute("aria-pressed", String(active));
+    });
+    chartSubEl.textContent = CHART_SUB[chartMode];
+    render();
+  });
+
+  // ---------- chips ----------
+  function renderChips() {
+    if (selected.length === 0) {
+      chipsEl.innerHTML = '<span style="font-size:12.5px;color:var(--muted);">No states selected — search above or pick a preset.</span>';
+      return;
+    }
+    chipsEl.innerHTML = selected.map(function (name) {
+      var dim = hovered && hovered !== name ? " dimmed" : "";
+      return '<span class="chip' + dim + '" data-state="' + name.replace(/"/g,"&quot;") + '">' +
+        '<span class="sw" style="background:' + colorOf[name] + '"></span>' + name +
+        '<button type="button" aria-label="Remove ' + name + '" data-remove="' + name.replace(/"/g,"&quot;") + '">&times;</button></span>';
+    }).join("");
+  }
+  chipsEl.addEventListener("click", function (e) {
+    var rm = e.target.closest("button[data-remove]");
+    if (rm) { removeState(rm.getAttribute("data-remove")); return; }
+  });
+  // Guard against redundant re-renders: renderChips() replaces the chip DOM nodes,
+  // which (since the cursor is still over the same screen position) re-triggers a
+  // fresh "mouseover" on the new node — an infinite render loop that starves out
+  // real mousedown/mouseup/click events before they can land on the remove button.
+  // Only re-render when the hovered state actually changes.
+  chipsEl.addEventListener("mouseover", function (e) {
+    var chip = e.target.closest(".chip");
+    var name = chip ? chip.getAttribute("data-state") : null;
+    if (name === null || name === hovered) return;
+    hovered = name; renderChips(); drawChart(); renderLegend();
+  });
+  chipsEl.addEventListener("mouseout", function (e) {
+    if (!e.target.closest(".chip")) return;
+    var to = e.relatedTarget;
+    if (to && chipsEl.contains(to)) return; // still moving within the chips row
+    if (hovered === null) return;
+    hovered = null; renderChips(); drawChart(); renderLegend();
+  });
+
+  // ---------- legend ----------
+  function renderLegend() {
+    if (selected.length === 0) { legendEl.innerHTML = ""; return; }
+    legendEl.innerHTML = selected.map(function (name) {
+      var detail;
+      if (chartMode === "boxplot") {
+        var st = boxStats(raw[name]);
+        detail = 'median ' + fmtPct(st.median) + ' &middot; range ' + fmtPct(st.min) + '&ndash;' + fmtPct(st.max);
+      } else {
+        var last = raw[name][raw[name].length - 1];
+        var first = raw[name][0];
+        var delta = last - first;
+        var arrow = delta >= 0 ? "+" : "";
+        detail = fmtPct(last) + ' (' + arrow + delta.toFixed(1) + ' pts since ' + obsYears[0] + ')';
+      }
+      return '<span class="legend-item" data-state="' + name.replace(/"/g,"&quot;") + '">' +
+        '<span class="sw" style="background:' + colorOf[name] + '"></span>' +
+        '<strong>' + name + '</strong>' +
+        '<span class="lv">' + detail + '</span></span>';
+    }).join("");
+  }
+  legendEl.addEventListener("mouseover", function (e) {
+    var item = e.target.closest(".legend-item");
+    var name = item ? item.getAttribute("data-state") : null;
+    if (name === null || name === hovered) return;
+    hovered = name; renderChips(); drawChart(); renderLegend();
+  });
+  legendEl.addEventListener("mouseout", function (e) {
+    if (!e.target.closest(".legend-item")) return;
+    var to = e.relatedTarget;
+    if (to && legendEl.contains(to)) return;
+    if (hovered === null) return;
+    hovered = null; renderChips(); drawChart(); renderLegend();
+  });
+  legendEl.addEventListener("click", function (e) {
+    var item = e.target.closest(".legend-item");
+    if (item) removeState(item.getAttribute("data-state"));
+  });
+
+  // ---------- chart ----------
+  var svgNS = "http://www.w3.org/2000/svg";
+  function el(tag, attrs) {
+    var e = document.createElementNS(svgNS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    return e;
+  }
+
+  var W = 1000, H = 380, M = { top: 18, right: 54, bottom: 30, left: 40 };
+
+  function drawChart() {
+    if (showTable) { chartContainer.innerHTML = ""; return; }
+    chartContainer.querySelectorAll("svg, .tooltip").forEach(function (n) { n.remove(); });
+
+    if (selected.length === 0) {
+      chartContainer.innerHTML = '<div class="empty-state">Add at least one state to see its trend.</div>';
+      return;
+    }
+    chartContainer.innerHTML = "";
+
+    if (chartMode === "boxplot") { drawBoxPlot(); } else { drawTimeSeries(); }
+  }
+
+  function drawTimeSeries() {
+    var innerW = W - M.left - M.right, innerH = H - M.top - M.bottom;
+
+    var allVals = [];
+    selected.forEach(function (n) { allVals = allVals.concat(raw[n]); });
+    var dataMin = Math.min.apply(null, allVals), dataMax = Math.max.apply(null, allVals);
+    var pad = Math.max(2, (dataMax - dataMin) * 0.12);
+    var yMin = Math.floor((dataMin - pad) / 2) * 2;
+    var yMax = Math.ceil((dataMax + pad) / 2) * 2;
+    if (yMax - yMin < 8) { var mid = (yMax + yMin) / 2; yMin = mid - 4; yMax = mid + 4; }
+
+    function x(i) { return M.left + (innerW * i) / (obsYears.length - 1); }
+    function y(v) { return M.top + innerH - ((v - yMin) / (yMax - yMin)) * innerH; }
+
+    var svg = el("svg", { class: "chart", viewBox: "0 0 " + W + " " + H, role: "img",
+      "aria-label": "Line chart of 5-year survival rate from " + obsYears[0] + " to " + obsYears[obsYears.length-1] + " for " + selected.join(", ") });
+
+    // gridlines + y labels
+    var steps = 5;
+    for (var s = 0; s <= steps; s++) {
+      var v = yMin + ((yMax - yMin) * s) / steps;
+      var gy = y(v);
+      svg.appendChild(el("line", { class: "gridline", x1: M.left, x2: W - M.right, y1: gy, y2: gy }));
+      var lbl = el("text", { class: "axis-label", x: M.left - 8, y: gy + 3, "text-anchor": "end" });
+      lbl.textContent = Math.round(v) + "%";
+      svg.appendChild(lbl);
+    }
+    svg.appendChild(el("line", { class: "baseline", x1: M.left, x2: W - M.right, y1: M.top + innerH, y2: M.top + innerH }));
+
+    // x labels
+    obsYears.forEach(function (yr, i) {
+      var show = obsYears.length <= 12 ? true : i % 2 === 0;
+      if (!show) return;
+      var lbl = el("text", { class: "axis-label", x: x(i), y: H - 8, "text-anchor": "middle" });
+      lbl.textContent = yr;
+      svg.appendChild(lbl);
+    });
+
+    // crosshair
+    var crosshair = el("line", { class: "crosshair", x1: M.left, x2: M.left, y1: M.top, y2: M.top + innerH });
+    svg.appendChild(crosshair);
+
+    // lines + dots + end labels
+    selected.forEach(function (name) {
+      var vals = raw[name];
+      var d = vals.map(function (v, i) { return (i === 0 ? "M" : "L") + x(i).toFixed(2) + " " + y(v).toFixed(2); }).join(" ");
+      var dim = hovered && hovered !== name;
+      var path = el("path", { class: "series-line" + (dim ? " dim" : ""), d: d, stroke: colorOf[name] });
+      svg.appendChild(path);
+
+      vals.forEach(function (v, i) {
+        svg.appendChild(el("circle", { class: "series-dot" + (dim ? " dim" : ""), cx: x(i), cy: y(v), r: 3.5, fill: colorOf[name] }));
+      });
+
+    });
+
+    // Direct end-of-line labels only when uncrowded (<=4 series) — beyond that the
+    // legend below is the identity channel, per the direct-labeling rule.
+    if (selected.length <= 4) {
+      var endPositions = selected.map(function (name) {
+        var vals = raw[name];
+        return { name: name, y: y(vals[vals.length - 1]) };
+      }).sort(function (a, b) { return a.y - b.y; });
+      var MIN_GAP = 13;
+      for (var p = 1; p < endPositions.length; p++) {
+        if (endPositions[p].y - endPositions[p - 1].y < MIN_GAP) {
+          endPositions[p].y = endPositions[p - 1].y + MIN_GAP;
+        }
+      }
+      endPositions.forEach(function (pos) {
+        var dim = hovered && hovered !== pos.name;
+        var t = el("text", { class: "end-label" + (dim ? " dim" : ""), x: x(obsYears.length - 1) + 8, y: pos.y + 4, fill: colorOf[pos.name] });
+        t.textContent = shortLabel(pos.name);
+        svg.appendChild(t);
+      });
+    }
+
+    // hover capture
+    var capture = el("rect", { class: "hover-capture", x: M.left, y: M.top, width: innerW, height: innerH });
+    svg.appendChild(capture);
+
+    chartContainer.appendChild(svg);
+
+    var tooltip = document.createElement("div");
+    tooltip.className = "tooltip";
+    chartContainer.appendChild(tooltip);
+
+    function pointerMove(evt) {
+      var rect = svg.getBoundingClientRect();
+      var scale = rect.width / W;
+      var px = (evt.clientX - rect.left) / scale;
+      var i = Math.round(((px - M.left) / innerW) * (obsYears.length - 1));
+      i = Math.max(0, Math.min(obsYears.length - 1, i));
+
+      crosshair.setAttribute("x1", x(i)); crosshair.setAttribute("x2", x(i));
+      crosshair.style.opacity = 1;
+
+      var rows = selected.map(function (n) { return { n: n, v: raw[n][i] }; })
+        .sort(function (a, b) { return b.v - a.v; });
+
+      tooltip.innerHTML = '<div class="t-year">as of March ' + obsYears[i] + ' &middot; opened ' + birthYears[i] + '</div>' +
+        rows.map(function (r) {
+          return '<div class="t-row"><span class="sw" style="background:' + colorOf[r.n] + '"></span>' +
+            '<span class="name">' + r.n + '</span><span class="val">' + fmtPct(r.v) + '</span></div>';
+        }).join("");
+
+      var cxPx = rect.left + x(i) * scale;
+      var cyPx = rect.top + M.top * scale;
+      tooltip.style.left = (cxPx - chartContainer.getBoundingClientRect().left) + "px";
+      tooltip.style.top = (cyPx - chartContainer.getBoundingClientRect().top) + "px";
+      tooltip.classList.add("show");
+    }
+    function pointerLeave() { crosshair.style.opacity = 0; tooltip.classList.remove("show"); }
+
+    capture.addEventListener("mousemove", pointerMove);
+    capture.addEventListener("mouseleave", pointerLeave);
+    capture.addEventListener("touchstart", function (e) { pointerMove(e.touches[0]); }, { passive: true });
+    capture.addEventListener("touchmove", function (e) { pointerMove(e.touches[0]); }, { passive: true });
+  }
+
+  // ---------- box-plot stats ----------
+  // Tukey box plot with exclusive quartiles (matches Excel's QUARTILE.EXC / the
+  // native "Box and Whisker" chart's default "exclusive" method): whiskers extend
+  // to the most extreme value within 1.5×IQR of the box; anything beyond is an
+  // outlier, drawn as a separate point.
+  function boxStats(vals) {
+    var s = vals.slice().sort(function (a, b) { return a - b; });
+    var n = s.length;
+    function quantAt(p) {
+      var r = p * (n + 1);
+      if (r < 1) return s[0];
+      if (r > n) return s[n - 1];
+      var lo = Math.floor(r) - 1, hi = Math.ceil(r) - 1;
+      if (lo === hi) return s[lo];
+      return s[lo] + (s[hi] - s[lo]) * (r - Math.floor(r));
+    }
+    var q1 = quantAt(0.25), median = quantAt(0.5), q3 = quantAt(0.75);
+    var iqr = q3 - q1;
+    var lowFence = q1 - 1.5 * iqr, highFence = q3 + 1.5 * iqr;
+    var within = s.filter(function (v) { return v >= lowFence && v <= highFence; });
+    var outliers = s.filter(function (v) { return v < lowFence || v > highFence; });
+    var mean = s.reduce(function (a, b) { return a + b; }, 0) / n;
+    return {
+      min: s[0], max: s[n - 1], q1: q1, median: median, q3: q3, iqr: iqr,
+      whiskerMin: within.length ? within[0] : s[0],
+      whiskerMax: within.length ? within[within.length - 1] : s[n - 1],
+      outliers: outliers, mean: mean
+    };
+  }
+
+  function drawBoxPlot() {
+    var innerW = W - M.left - M.right, innerH = H - M.top - M.bottom;
+
+    var stats = selected.map(function (name) { return { name: name, s: boxStats(raw[name]) }; });
+
+    var allVals = [];
+    stats.forEach(function (st) { allVals.push(st.s.min, st.s.max); });
+    var dataMin = Math.min.apply(null, allVals), dataMax = Math.max.apply(null, allVals);
+    var pad = Math.max(2, (dataMax - dataMin) * 0.15);
+    var yMin = Math.floor((dataMin - pad) / 2) * 2;
+    var yMax = Math.ceil((dataMax + pad) / 2) * 2;
+    if (yMax - yMin < 8) { var mid = (yMax + yMin) / 2; yMin = mid - 4; yMax = mid + 4; }
+
+    function y(v) { return M.top + innerH - ((v - yMin) / (yMax - yMin)) * innerH; }
+
+    var n = stats.length;
+    var band = innerW / n;
+    var boxW = Math.min(56, band * 0.46);
+    function xCenter(i) { return M.left + band * (i + 0.5); }
+
+    var svg = el("svg", { class: "chart", viewBox: "0 0 " + W + " " + H, role: "img",
+      "aria-label": "Box plot of 5-year survival rate, 2010–2020 cohorts, for " + selected.join(", ") });
+
+    // gridlines + y labels
+    var steps = 5;
+    for (var s = 0; s <= steps; s++) {
+      var v = yMin + ((yMax - yMin) * s) / steps;
+      var gy = y(v);
+      svg.appendChild(el("line", { class: "gridline", x1: M.left, x2: W - M.right, y1: gy, y2: gy }));
+      var lbl = el("text", { class: "axis-label", x: M.left - 8, y: gy + 3, "text-anchor": "end" });
+      lbl.textContent = Math.round(v) + "%";
+      svg.appendChild(lbl);
+    }
+    svg.appendChild(el("line", { class: "baseline", x1: M.left, x2: W - M.right, y1: M.top + innerH, y2: M.top + innerH }));
+
+    var tooltip = document.createElement("div");
+    tooltip.className = "tooltip";
+
+    stats.forEach(function (st, i) {
+      var name = st.name, s = st.s;
+      var cx = xCenter(i);
+      var dim = hovered && hovered !== name;
+      var g = el("g", { class: "box-group" + (dim ? " dim" : "") });
+
+      // whisker lines
+      g.appendChild(el("line", { class: "box-whisker", x1: cx, x2: cx, y1: y(s.whiskerMin), y2: y(s.q1), stroke: colorOf[name] }));
+      g.appendChild(el("line", { class: "box-whisker", x1: cx, x2: cx, y1: y(s.q3), y2: y(s.whiskerMax), stroke: colorOf[name] }));
+      // whisker caps
+      g.appendChild(el("line", { class: "box-cap", x1: cx - boxW * 0.28, x2: cx + boxW * 0.28, y1: y(s.whiskerMin), y2: y(s.whiskerMin), stroke: colorOf[name] }));
+      g.appendChild(el("line", { class: "box-cap", x1: cx - boxW * 0.28, x2: cx + boxW * 0.28, y1: y(s.whiskerMax), y2: y(s.whiskerMax), stroke: colorOf[name] }));
+      // box (Q1-Q3)
+      g.appendChild(el("rect", { class: "box-rect", x: cx - boxW / 2, y: y(s.q3), width: boxW, height: Math.max(1, y(s.q1) - y(s.q3)), fill: colorOf[name], stroke: colorOf[name] }));
+      // median line
+      g.appendChild(el("line", { class: "box-median", x1: cx - boxW / 2, x2: cx + boxW / 2, y1: y(s.median), y2: y(s.median), stroke: colorOf[name] }));
+      // mean marker (diamond)
+      var my = y(s.mean), md = 4.5;
+      g.appendChild(el("path", { class: "box-mean", d: "M " + cx + " " + (my - md) + " L " + (cx + md) + " " + my + " L " + cx + " " + (my + md) + " L " + (cx - md) + " " + my + " Z", fill: colorOf[name], stroke: "var(--surface-1)" }));
+      // outliers
+      s.outliers.forEach(function (v, oi) {
+        var dx = s.outliers.length > 1 ? (oi % 2 === 0 ? -5 : 5) : 0;
+        g.appendChild(el("circle", { class: "box-outlier", cx: cx + dx, cy: y(v), r: 3, fill: colorOf[name], stroke: "var(--surface-1)" }));
+      });
+      // category label
+      var catLbl = el("text", { class: "box-cat-label", x: cx, y: H - 8 });
+      catLbl.textContent = shortLabel(name);
+      g.appendChild(catLbl);
+
+      // hover hit area spans the full plot height for this band
+      var hit = el("rect", { class: "box-hit", x: M.left + band * i, y: M.top, width: band, height: innerH });
+      g.appendChild(hit);
+
+      hit.addEventListener("mouseenter", function () {
+        tooltip.innerHTML = '<div class="t-year">' + name + '</div>' +
+          '<div class="t-row"><span class="name">Max</span><span class="val">' + fmtPct(s.max) + '</span></div>' +
+          '<div class="t-row"><span class="name">Q3</span><span class="val">' + fmtPct(s.q3) + '</span></div>' +
+          '<div class="t-row"><span class="name">Median</span><span class="val">' + fmtPct(s.median) + '</span></div>' +
+          '<div class="t-row"><span class="name">Mean</span><span class="val">' + fmtPct(s.mean) + '</span></div>' +
+          '<div class="t-row"><span class="name">Q1</span><span class="val">' + fmtPct(s.q1) + '</span></div>' +
+          '<div class="t-row"><span class="name">Min</span><span class="val">' + fmtPct(s.min) + '</span></div>' +
+          (s.outliers.length ? '<div class="t-row"><span class="name">Outliers</span><span class="val">' + s.outliers.map(fmtPct).join(", ") + '</span></div>' : "");
+        var rect = svg.getBoundingClientRect();
+        var scale = rect.width / W;
+        var cPx = rect.left + cx * scale;
+        var topPx = rect.top + y(s.max) * scale;
+        tooltip.style.left = (cPx - chartContainer.getBoundingClientRect().left) + "px";
+        tooltip.style.top = (topPx - chartContainer.getBoundingClientRect().top) + "px";
+        tooltip.classList.add("show");
+      });
+      hit.addEventListener("mouseleave", function () { tooltip.classList.remove("show"); });
+
+      svg.appendChild(g);
+    });
+
+    chartContainer.appendChild(svg);
+    chartContainer.appendChild(tooltip);
+  }
+
+  function shortLabel(name) {
+    if (name === "National (US)") return "US";
+    if (name === "District of Columbia") return "DC";
+    var abbrevs = {
+      "Alabama":"AL","Alaska":"AK","Arizona":"AZ","Arkansas":"AR","California":"CA","Colorado":"CO",
+      "Connecticut":"CT","Delaware":"DE","Florida":"FL","Georgia":"GA","Hawaii":"HI","Idaho":"ID",
+      "Illinois":"IL","Indiana":"IN","Iowa":"IA","Kansas":"KS","Kentucky":"KY","Louisiana":"LA",
+      "Maine":"ME","Maryland":"MD","Massachusetts":"MA","Michigan":"MI","Minnesota":"MN","Mississippi":"MS",
+      "Missouri":"MO","Montana":"MT","Nebraska":"NE","Nevada":"NV","New Hampshire":"NH","New Jersey":"NJ",
+      "New Mexico":"NM","New York":"NY","North Carolina":"NC","North Dakota":"ND","Ohio":"OH","Oklahoma":"OK",
+      "Oregon":"OR","Pennsylvania":"PA","Rhode Island":"RI","South Carolina":"SC","South Dakota":"SD",
+      "Tennessee":"TN","Texas":"TX","Utah":"UT","Vermont":"VT","Virginia":"VA","Washington":"WA",
+      "West Virginia":"WV","Wisconsin":"WI","Wyoming":"WY"
+    };
+    return abbrevs[name] || name;
+  }
+
+  // ---------- table ----------
+  function drawTable() {
+    if (!showTable) { tableContainer.style.display = "none"; return; }
+    tableContainer.style.display = "block";
+    if (selected.length === 0) {
+      tableContainer.innerHTML = '<div class="empty-state">Add at least one state to see its data.</div>';
+      return;
+    }
+    if (chartMode === "boxplot") { drawBoxTable(); } else { drawTimeSeriesTable(); }
+  }
+
+  function drawTimeSeriesTable() {
+    var head = '<thead><tr><th>State</th>' + obsYears.map(function (y) { return "<th>" + y + "</th>"; }).join("") + '</tr></thead>';
+    var body = "<tbody>" + selected.map(function (name) {
+      return "<tr><td><span class='sw' style='background:" + colorOf[name] + "'></span>" + name + "</td>" +
+        raw[name].map(function (v) { return "<td>" + fmtPct(v) + "</td>"; }).join("") + "</tr>";
+    }).join("") + "</tbody>";
+    tableContainer.innerHTML = '<table class="data-table"><caption>5-year survival rate (%) by cohort — columns are the year each cohort reached its 5-year mark</caption>' + head + body + '</table>';
+  }
+
+  function drawBoxTable() {
+    var cols = ["Min", "Q1", "Median", "Q3", "Max", "Mean", "IQR", "Outliers"];
+    var head = '<thead><tr><th>State</th>' + cols.map(function (c) { return "<th>" + c + "</th>"; }).join("") + '</tr></thead>';
+    var body = "<tbody>" + selected.map(function (name) {
+      var s = boxStats(raw[name]);
+      return "<tr><td><span class='sw' style='background:" + colorOf[name] + "'></span>" + name + "</td>" +
+        "<td>" + fmtPct(s.min) + "</td><td>" + fmtPct(s.q1) + "</td><td>" + fmtPct(s.median) + "</td>" +
+        "<td>" + fmtPct(s.q3) + "</td><td>" + fmtPct(s.max) + "</td><td>" + fmtPct(s.mean) + "</td>" +
+        "<td>" + s.iqr.toFixed(1) + " pts</td>" +
+        "<td>" + (s.outliers.length ? s.outliers.map(fmtPct).join(", ") : "&mdash;") + "</td></tr>";
+    }).join("") + "</tbody>";
+    tableContainer.innerHTML = '<table class="data-table"><caption>Distribution of 5-year survival rate (%) across 2010–2020 opening cohorts &mdash; quartiles use Excel’s exclusive method</caption>' + head + body + '</table>';
+  }
+
+  function render() {
+    renderChips();
+    renderLegend();
+    drawChart();
+    drawTable();
+  }
+
+  // initial selection mirrors the reporter exchange: MI, IL, KY, PA
+  selected = ["Michigan","Illinois","Kentucky","Pennsylvania"];
+  assignColors();
+  render();
+})();
+  </script>
+</body>
+</html>

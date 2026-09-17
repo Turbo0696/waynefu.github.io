@@ -15,7 +15,7 @@ echo "--- staging all changes ---"
 git add -A
 
 echo "--- committing ---"
-git commit -m "feat(journal): add Michigan Public interview entry to Aftermarket Dynamics"
+git commit -m "feat(nav): add about.html, turn index into a Latest feed"
 
 echo "--- pushing to origin/main ---"
 echo "(A browser window may open for GitHub authentication — click Authorize.)"

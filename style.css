@@ -627,6 +627,10 @@ main { flex: 1; }
 
 .journal-entries { display: flex; flex-direction: column; }
 
+/* ---- LATEST FEED (INDEX) ---- */
+.feed-link { margin-top: 0.75rem; }
+.feed-link a { font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.04em; }
+
 .journal-entry { padding: 3rem 0; border-bottom: 1px solid var(--border); }
 .journal-entry:first-child { border-top: 1px solid var(--border); }
 
