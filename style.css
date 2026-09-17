@@ -13,9 +13,9 @@
   --maize: #ffcb05;
   --maize-deep: #b8860b;
   --border: #dde3e8;
-  --mono: 'IBM Plex Mono', monospace;
-  --serif: 'Source Serif 4', Georgia, serif;
-  --display: 'Playfair Display', 'Times New Roman', serif;
+  --mono: 'Inter', sans-serif;
+  --serif: 'Lora', Georgia, serif;
+  --display: 'Fraunces', 'Times New Roman', serif;
   --nav-h: 64px;
 }
 

@@ -15,7 +15,7 @@ echo "--- staging all changes ---"
 git add -A
 
 echo "--- committing ---"
-git commit -m "style: retheme site to Michigan blue and maize"
+git commit -m "style: switch typography to Fraunces/Lora/Inter (Editorial Warmth)"
 
 echo "--- pushing to origin/main ---"
 echo "(A browser window may open for GitHub authentication — click Authorize.)"
