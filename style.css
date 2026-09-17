@@ -49,9 +49,19 @@ ul { list-style: none; }
   background: var(--paper);
   border-bottom: 1px solid var(--border);
   border-top: 3px solid var(--maize);
+}
+
+.nav-inner {
+  max-width: 860px; height: 100%;
+  margin: 0 auto; padding: 0 2rem;
   display: flex; align-items: center;
   justify-content: space-between;
-  padding: 0 2.5rem; gap: 2rem;
+}
+
+.nav-toggle {
+  display: block; background: none; border: none;
+  font-size: 1.4rem; line-height: 1; padding: 0;
+  cursor: pointer; color: var(--ink);
 }
 
 .nav-name a {
@@ -60,50 +70,56 @@ ul { list-style: none; }
   font-weight: 700; letter-spacing: -0.01em;
 }
 
-.nav-links { display: flex; gap: 2rem; align-items: center; }
+/* Nav panel — opened by the hamburger, at every screen size */
+.nav-links {
+  display: none; flex-direction: column;
+  position: absolute; top: var(--nav-h); left: 0; right: 0;
+  background: var(--paper); border-bottom: 1px solid var(--border);
+  padding: 1.25rem 2rem 1.75rem; gap: 1rem;
+  z-index: 150; max-height: calc(100vh - var(--nav-h)); overflow-y: auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+.nav-links.open { display: flex; }
 .nav-links > li { position: relative; }
 
 .nav-links a, .nav-dropdown-label {
   font-family: var(--mono);
-  font-size: 0.75rem; letter-spacing: 0.05em;
+  font-size: 0.78rem; letter-spacing: 0.05em;
   color: var(--ink-light); text-transform: uppercase;
   padding-bottom: 2px;
   border-bottom: 2px solid transparent;
   transition: color 0.2s, border-color 0.2s;
   cursor: pointer; user-select: none;
+  display: inline-block;
 }
 
 .nav-links a:hover, .nav-links a.active, .nav-dropdown-label.active {
   color: var(--ink); border-bottom-color: var(--maize); opacity: 1;
 }
 
-/* Dropdown */
+/* Dropdown — expands inline within the nav panel */
 .nav-dropdown { position: relative; }
+.nav-dropdown-label { display: inline-block; }
 
 .dropdown-menu {
-  display: none; position: absolute;
-  top: calc(100% + 18px); right: 0;
-  background: var(--paper); border: 1px solid var(--border);
-  min-width: 210px; box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-  z-index: 200; flex-direction: column;
+  display: none; position: static;
+  flex-direction: column;
+  box-shadow: none; border: none; background: none;
+  border-left: 2px solid var(--border);
+  padding-left: 1rem; margin-top: 0.6rem;
 }
 
 .dropdown-menu.open { display: flex; }
 
 .dropdown-menu li a {
-  display: block; padding: 0.75rem 1.25rem;
-  font-family: var(--mono); font-size: 0.72rem;
+  display: block; padding: 0.5rem 0;
+  font-family: var(--mono); font-size: 0.7rem;
   letter-spacing: 0.05em; text-transform: uppercase;
-  color: var(--ink-light); transition: background 0.15s;
+  color: var(--ink-light); transition: color 0.15s;
 }
 .dropdown-menu li:not(:last-child) a { border-bottom: 1px solid var(--border); }
 .dropdown-menu li a:hover, .dropdown-menu li a.active {
-  background: var(--paper-warm); color: var(--ink); opacity: 1;
-}
-
-.nav-toggle {
-  display: none; background: none; border: none;
-  font-size: 1.4rem; cursor: pointer; color: var(--ink);
+  color: var(--ink); opacity: 1;
 }
 
 /* ---- FOOTER ---- */
@@ -680,23 +696,8 @@ main { flex: 1; }
 }
 
 @media (max-width: 700px) {
-  .nav { padding: 0 1.25rem; }
-  .nav-links {
-    display: none; flex-direction: column;
-    position: absolute; top: var(--nav-h); left: 0; right: 0;
-    background: var(--paper); border-bottom: 1px solid var(--border);
-    padding: 1rem 1.5rem 1.5rem; gap: 1rem;
-  }
-  .nav-links.open { display: flex; }
-  .nav-toggle { display: block; }
-  .dropdown-menu {
-    position: static; display: none;
-    box-shadow: none; border: none;
-    border-left: 2px solid var(--border);
-    padding-left: 1rem; margin-top: 0.5rem;
-  }
-  .dropdown-menu.open { display: flex; }
-  .nav-dropdown-label { display: inline-block; }
+  .nav-inner { padding: 0 1.25rem; }
+  .nav-links { padding: 1rem 1.25rem 1.5rem; }
   .hero { grid-template-columns: 1fr; padding: 2.5rem 0; }
   .hero-photo { display: none; }
   .about-body { grid-template-columns: 1fr; gap: 2rem; }

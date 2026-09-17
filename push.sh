@@ -15,7 +15,7 @@ echo "--- staging all changes ---"
 git add -A
 
 echo "--- committing ---"
-git commit -m "style: switch typography to Fraunces/Lora/Inter (Editorial Warmth)"
+git commit -m "feat: restructure nav (hamburger menu, Industry & Community and Research dropdowns), add Publications page"
 
 echo "--- pushing to origin/main ---"
 echo "(A browser window may open for GitHub authentication — click Authorize.)"

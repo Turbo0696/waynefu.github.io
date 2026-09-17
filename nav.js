@@ -1,38 +1,40 @@
-// Mobile hamburger
+// Hamburger menu — toggles the whole nav panel
 function toggleNav() {
   document.querySelector('.nav-links').classList.toggle('open');
 }
 
-// Journal dropdown — click to toggle
+// Nav dropdowns — click to toggle (supports multiple dropdowns per page)
 document.addEventListener('DOMContentLoaded', function () {
-  var dropdown = document.querySelector('.nav-dropdown');
-  if (!dropdown) return;
+  var dropdowns = document.querySelectorAll('.nav-dropdown');
+  if (!dropdowns.length) return;
 
-  var label = dropdown.querySelector('.nav-dropdown-label');
-  var menu  = dropdown.querySelector('.dropdown-menu');
+  dropdowns.forEach(function (dropdown) {
+    var label = dropdown.querySelector('.nav-dropdown-label');
+    var menu = dropdown.querySelector('.dropdown-menu');
+    if (!label || !menu) return;
 
-  // Toggle on label click
-  if (label) {
     label.addEventListener('click', function (e) {
       e.stopPropagation();
-      menu.classList.toggle('open');
+      var wasOpen = menu.classList.contains('open');
+      // close any other open dropdown first
+      dropdowns.forEach(function (d) {
+        var m = d.querySelector('.dropdown-menu');
+        if (m && m !== menu) m.classList.remove('open');
+      });
+      menu.classList.toggle('open', !wasOpen);
     });
-  }
 
-  // Also open on any click inside the dropdown wrapper
-  dropdown.addEventListener('click', function (e) {
-    if (e.target.tagName === 'A') return;
-    e.stopPropagation();
-    menu.classList.toggle('open');
+    // keep menu open when clicking inside it
+    menu.addEventListener('click', function (e) {
+      e.stopPropagation();
+    });
   });
 
-  // Close when clicking anywhere outside
+  // close all dropdowns when clicking anywhere outside
   document.addEventListener('click', function () {
-    menu.classList.remove('open');
-  });
-
-  // Keep menu open when clicking inside it
-  menu.addEventListener('click', function (e) {
-    e.stopPropagation();
+    dropdowns.forEach(function (d) {
+      var m = d.querySelector('.dropdown-menu');
+      if (m) m.classList.remove('open');
+    });
   });
 });
