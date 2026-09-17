@@ -15,7 +15,7 @@ echo "--- staging all changes ---"
 git add -A
 
 echo "--- committing ---"
-git commit -m "content: remove publications cross-link from Current Work subtitle"
+git commit -m "fix: strengthen section-label contrast site-wide (was failing WCAG AA)"
 
 echo "--- pushing to origin/main ---"
 echo "(A browser window may open for GitHub authentication — click Authorize.)"
