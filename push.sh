@@ -15,7 +15,7 @@ echo "--- staging all changes ---"
 git add -A
 
 echo "--- committing ---"
-git commit -m "feat(nav): add about.html, turn index into a Latest feed"
+git commit -m "feat(journal): add Whatever Intriguing journal, move survival-rate piece there"
 
 echo "--- pushing to origin/main ---"
 echo "(A browser window may open for GitHub authentication — click Authorize.)"

@@ -3,14 +3,16 @@
    ============================================ */
 
 :root {
-  --ink: #1a1814;
-  --ink-light: #5a5650;
-  --ink-faint: #9a9690;
-  --paper: #f7f4ef;
-  --paper-warm: #ede9e2;
-  --accent: #b5432a;
-  --accent-light: #e8c9c2;
-  --border: #d8d4cd;
+  --ink: #12202e;
+  --ink-light: #47586a;
+  --ink-faint: #8b98a5;
+  --paper: #f9f7f1;
+  --paper-warm: #f5edd2;
+  --accent: #00274c;
+  --accent-light: #d3e2f0;
+  --maize: #ffcb05;
+  --maize-deep: #b8860b;
+  --border: #d9d3bd;
   --mono: 'IBM Plex Mono', monospace;
   --serif: 'Source Serif 4', Georgia, serif;
   --display: 'Playfair Display', 'Times New Roman', serif;
@@ -46,6 +48,7 @@ ul { list-style: none; }
   height: var(--nav-h);
   background: var(--paper);
   border-bottom: 1px solid var(--border);
+  border-top: 3px solid var(--maize);
   display: flex; align-items: center;
   justify-content: space-between;
   padding: 0 2.5rem; gap: 2rem;
@@ -71,7 +74,7 @@ ul { list-style: none; }
 }
 
 .nav-links a:hover, .nav-links a.active, .nav-dropdown-label.active {
-  color: var(--ink); border-bottom-color: var(--accent); opacity: 1;
+  color: var(--ink); border-bottom-color: var(--maize); opacity: 1;
 }
 
 /* Dropdown */
@@ -372,7 +375,7 @@ main { flex: 1; }
 .honor-year {
   display: block; font-family: var(--mono);
   font-size: 0.7rem; letter-spacing: 0.1em;
-  color: var(--accent); margin-bottom: 0.5rem;
+  color: var(--maize-deep); margin-bottom: 0.5rem;
 }
 
 .honor-item p {
@@ -476,7 +479,7 @@ main { flex: 1; }
 
 .pub-award {
   font-family: var(--mono); font-size: 0.68rem;
-  color: var(--accent); margin: 0.35rem 0 0.5rem;
+  color: var(--maize-deep); margin: 0.35rem 0 0.5rem;
   line-height: 1.6;
 }
 
