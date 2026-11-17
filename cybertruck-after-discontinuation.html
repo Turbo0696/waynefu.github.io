@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Tesla will wind down Cybertruck production in 2027. What happens to a connected, software-defined truck after it is discontinued, and what it means for right to repair. By Wayne Fu.">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WRL4F3J700"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-WRL4F3J700');
+  </script>
+  <title>What Happens to a Connected Truck After It's Discontinued? — Wayne Fu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+    <style>
+.rp-post {
+  --ink-secondary: #3a4654;
+  --ink-muted: #6b7886;
+  max-width: 720px;
+}
+.rp-post a { text-decoration: underline; text-underline-offset: 2px; }
+.rp-post p { font-family: var(--serif); font-size: 18px; line-height: 1.75; color: var(--ink-secondary); margin: 0 0 20px; }
+.rp-post p strong { color: var(--ink); }
+.rp-post h2 { font-family: var(--display); font-size: 22px; margin: 44px 0 16px; padding-top: 4px; letter-spacing: -0.005em; }
+.rp-post .closing-question { font-style: italic; }
+.article-meta { font-family: var(--mono); font-size: 0.8rem; letter-spacing: 0.04em; color: var(--ink-faint); text-transform: uppercase; margin: -1rem 0 2.5rem; }
+@media (max-width: 480px) {
+  .rp-post p { font-size: 16px; }
+}
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <button class="nav-toggle" onclick="toggleNav()">☰</button>
+      <div class="nav-name"><a href="about.html">Wayne Fu</a></div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Latest</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="nav-dropdown">
+        <span class="nav-dropdown-label active">Journals ▾</span>
+        <ul class="dropdown-menu">
+          <li><a href="journal.html" class="active">Aftermarket Dynamics</a></li>
+          <li><a href="journal2.html">Chemical Use</a></li>
+          <li><a href="journal3.html">Whatever Intriguing</a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown">
+        <span class="nav-dropdown-label">Industry &amp; Community ▾</span>
+        <ul class="dropdown-menu">
+          <li><a href="industry.html">Past Work</a></li>
+          <li><a href="work.html">Current Work</a></li>
+        </ul>
+      </li>
+      <li class="nav-dropdown">
+        <span class="nav-dropdown-label">Research ▾</span>
+        <ul class="dropdown-menu">
+          <li><a href="research.html">Research Interests</a></li>
+          <li><a href="publications.html">Publications</a></li>
+        </ul>
+      </li>
+      <li><a href="teaching.html">Teaching</a></li>
+    </ul>
+  </nav>
+
+    <main class="page-inner">
+
+    <div class="page-header">
+      <h1>What Happens to a Connected Truck <em>After It's Discontinued?</em></h1>
+      <p class="page-subtitle">The Cybertruck as a test case for connected products and right to repair</p>
+    </div>
+    <p class="article-meta">November 17, 2026 · Wayne Fu · <a href="journal.html">Aftermarket Dynamics</a></p>
+
+    <article class="rp-post">
+
+  <p>I was hammered by teaching stuff this semester, so this post took longer than I planned. A couple of weeks ago, Tesla said it will wind down Cybertruck production around mid-2027 to make room for the Cybercab (<a href="https://techcrunch.com/2026/11/06/tesla-will-stop-making-the-cybertruck-in-2027/" target="_blank" rel="noopener">TechCrunch</a>). The headlines focused on the sales miss, with volume settling at roughly a tenth of what the line was built for (<a href="https://electrek.co/2026/11/06/tesla-ending-cybertruck-production-sales-10-percent-plan/" target="_blank" rel="noopener">Electrek</a>).</p>
+
+  <p>My thoughts went somewhere else: the people who already own one, and what Tesla will do for them afterward. In my previous life, before moving to academia, &ldquo;end of life&rdquo; was a painful but interesting business challenge, and I designed several features to try to address it. It was also something customers did not take lightly. Products get discontinued all the time, and when they do, parts get harder to find, fewer mechanics know how to work on them, and resale value wanes.</p>
+
+  <p>Tesla has discontinued models before: the original Roadster and, this year, the Model S and X (<a href="https://www.cnbc.com/2019/12/04/tesla-roadsters-to-get-better-service-options-company-promises-owners.html" target="_blank" rel="noopener">CNBC</a>; <a href="https://www.carpro.com/blog/tesla-ending-production-of-model-s-model-x" target="_blank" rel="noopener">CarPro</a>). But the Cybertruck stands out, because so much of what the truck <em>is</em> lives in software and stays connected to Tesla. With an ordinary truck, the main question is whether you can still find parts. With this one, the bigger question is whether someone will keep maintaining the code, keep it running with limited connectivity or none at all, and for how long. In fact, this should be a vivid test case for how modern connected products and R2R interact, and for how industry leaders respond.</p>
+
+  <p>So far, no one knows the answer. The only reassurance is Musk&rsquo;s offhand remark that the fleet &ldquo;will be around for a long time&rdquo; (<a href="https://tech-insider.org/cybertruck-wind-down-fleet-owners-20237-sales-gigafactory-texas-2026/" target="_blank" rel="noopener">Tech Insider</a>). That&rsquo;s probably sincere, but it isn&rsquo;t a commitment anyone can rely on.</p>
+
+  <p>A few observations:</p>
+
+  <p><strong>Software updates have become a safety matter.</strong> Tesla often delivers software fixes, including formal recalls, over the air (OTA). The truck has been recalled about 11 times since launch, per Reuters&rsquo; count of NHTSA data, and several of those were resolved with a software push (<a href="https://www.cars.com/research/tesla-cybertruck/recalls" target="_blank" rel="noopener">Cars.com</a>; <a href="https://tomsguide.com/vehicle-tech/evs/tesla-recalls-27-000-cybertrucks-over-rear-camera-glitch-thats-5-recalls-this-year" target="_blank" rel="noopener">Tom&rsquo;s Guide</a>). That convenience is wonderful when the product is actively maintained. But once production stops, every future fix has to justify the cost of writing and testing it on its own, and that will likely get trickier and harder.</p>
+
+  <p><strong>Even the steering is code.</strong> The truck uses steer-by-wire with no mechanical link to the wheels, along with rear-wheel steering, a 48-volt system, and Tesla&rsquo;s own internal network (<a href="https://www.techradar.com/vehicle-tech/love-it-or-hate-it-the-cybertrucks-tech-is-a-game-changer" target="_blank" rel="noopener">TechRadar</a>; <a href="https://www.thedrive.com/car-reviews/the-tesla-cybertrucks-steering-broke-my-brain" target="_blank" rel="noopener">The Drive</a>). It&rsquo;s impressive engineering. But it also means that &ldquo;software support&rdquo; isn&rsquo;t about getting new features. It&rsquo;s about keeping safety-critical systems patched and secure.</p>
+
+  <p><strong>We&rsquo;ve seen this movie before.</strong> When AT&amp;T shut down its 3G network in 2022, early Model S owners lost connected features unless they paid for a modem upgrade (<a href="https://www.tesla.com/support/update-3g-services" target="_blank" rel="noopener">Tesla</a>; <a href="https://notateslaapp.com/news/612/early-tesla-vehicles-to-lose-cell-connectivity" target="_blank" rel="noopener">Not a Tesla App</a>). Their cars still drove, but things they had paid for quietly stopped working. The Cybertruck depends even more on that connection: phone key, app, navigation, remote diagnostics. And that&rsquo;s before anyone other than Tesla tries to repair it.</p>
+
+  <p><strong>Repair access is offered, not guaranteed.</strong> To Tesla&rsquo;s credit, it publishes service manuals and sells independent shops access to its diagnostic software, recently at a much lower price (<a href="https://service.tesla.com/docs/Public/service-subscription-faqs/service_subscription_faqs_en-US.pdf" target="_blank" rel="noopener">Tesla</a>; <a href="https://driveteslacanada.ca/news/tesla-reapirs-more-accessible-toolbox-3-price-drop/" target="_blank" rel="noopener">Drive Tesla Canada</a>). But it&rsquo;s a subscription running on Tesla&rsquo;s servers. If independent repair shops are going to keep an orphaned fleet on the road, they need that door to stay open, and right now that&rsquo;s entirely Tesla&rsquo;s call.</p>
+
+  <p><strong>What you paid for may not be yours.</strong> Software features and upgrades, such as Full Self-Driving, are licenses, and Tesla has historically been reluctant to let them transfer to a new owner (<a href="https://electrek.co/2025/01/25/tesla-refuses-to-do-the-right-thing-about-full-self-driving-transfers/" target="_blank" rel="noopener">Electrek</a>). For a discontinued model, owners are left to guess what those purchases are really worth.</p>
+
+  <p><strong>The old-fashioned problems haven&rsquo;t gone away either.</strong> The stainless body, glass, and many components are unique to this truck. Owners were already reporting long waits for parts while it was still in production (<a href="https://www.torquenews.com/1084/i-finally-received-my-tesla-cybertruck-cant-rail-recall-notice-now-they-dont-have-parts-guess" target="_blank" rel="noopener">Torque News</a>). Stainless panels are hard to repair, insurance is expensive, and some damaged trucks are already going to salvage auctions (<a href="https://insideevs.com/news/699189/tesla-cybertruck-repair-insurance/" target="_blank" rel="noopener">InsideEVs</a>; <a href="https://insideevs.com/news/724374/tesla-cybertruck-totaled-going-auction/" target="_blank" rel="noopener">InsideEVs</a>). How resale values will respond is still an open question. A UCLA study of discontinued models finds that they tend to depreciate faster (<a href="https://anderson-review.ucla.edu/discontinued-car-models-often-sold-to-lower-income-people-carry-a-magnified-risk-of-collateral-shortfall" target="_blank" rel="noopener">Garmaise, Jansen &amp; Winegar, <em>Journal of Financial and Quantitative Analysis</em>, forthcoming</a>), but low-volume vehicles with a devoted following, like the Toyota FJ Cruiser, have held their value better than their segment (<a href="https://www.automotive-fleet.com/news/values-of-discontinued-vehicles-can-surge-at-auction" target="_blank" rel="noopener">Black Book via Automotive Fleet</a>).</p>
+
+  <h2>Where this leaves right to repair</h2>
+
+  <p>Most of the right-to-repair conversation is about <em>access</em>: manuals, parts, tools, data. Massachusetts has gone furthest on vehicle data, and its telematics access law survived its court challenge in 2025 (<a href="https://www.wbur.org/news/2025/02/12/massachusetts-right-to-repair-carr-law-challenges-dismissed" target="_blank" rel="noopener">WBUR</a>). That matters.</p>
+
+  <p>But the Cybertruck reminds me there&rsquo;s a second question we haven&rsquo;t really asked: <em>duration</em>. How long does the manufacturer have to keep the software, the servers, and the diagnostic channels running after it stops selling the product? Today, that&rsquo;s entirely up to the manufacturer. A minimum support period disclosed at the time of sale, diagnostic access that outlives the product line, and paid software that transfers with the vehicle all seem like reasonable places to start. To me, they could fall under warranty law and the FTC, rather than being left as an afterthought.</p>
+
+  <p>I keep coming back to planned obsolescence, but I did not expect this version of it to arrive so quickly. Here, a glamour product is still shining and physically capable, yet it could start losing functions, safety support, and value because of its dependence on that connection.</p>
+
+  <p class="closing-question">So I&rsquo;ll leave it as a question: if a company can end a product line with an announcement, could it, or should it, end that product&rsquo;s software life and connections the same way?</p>
+
+    </article>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2026 Wayne Fu · University of Michigan-Dearborn · <a href="mailto:waynefu@umich.edu">waynefu@umich.edu</a></p>
+  </footer>
+
+  <script src="nav.js"></script>
+</body>
+</html>

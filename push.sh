@@ -12,10 +12,10 @@ echo "--- current status ---"
 git status
 
 echo "--- staging all changes ---"
-git add -A
+git add cybertruck-after-discontinuation.html index.html journal.html push.sh
 
 echo "--- committing ---"
-git commit -m "feat(journal): add iFixit repairability trend post"
+git commit -m "feat(journal): add Cybertruck discontinuation post"
 
 echo "--- pushing to origin/main ---"
 echo "(A browser window may open for GitHub authentication — click Authorize.)"
